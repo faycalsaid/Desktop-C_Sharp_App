@@ -33,6 +33,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuSlider1 = new Bunifu.Framework.UI.BunifuSlider();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.bunifuSlider1);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton1);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.DeepPink;
@@ -91,6 +93,19 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // bunifuSlider1
+            // 
+            this.bunifuSlider1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSlider1.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.bunifuSlider1.BorderRadius = 0;
+            this.bunifuSlider1.IndicatorColor = System.Drawing.Color.SeaGreen;
+            this.bunifuSlider1.Location = new System.Drawing.Point(12, 218);
+            this.bunifuSlider1.MaximumValue = 100;
+            this.bunifuSlider1.Name = "bunifuSlider1";
+            this.bunifuSlider1.Size = new System.Drawing.Size(415, 28);
+            this.bunifuSlider1.TabIndex = 1;
+            this.bunifuSlider1.Value = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +125,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuSlider bunifuSlider1;
     }
 }
 
