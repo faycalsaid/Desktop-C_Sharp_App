@@ -20,7 +20,7 @@ namespace Main.DAO
 
         public void connecter()
         {
-            maConnexion.Open();
+            maConnexion.Open(); //dddddd
         }
 
         public void deconnecter()
