@@ -109,7 +109,7 @@
             this.bunifuSlider1.BackgroudColor = System.Drawing.Color.DarkGray;
             this.bunifuSlider1.BorderRadius = 0;
             this.bunifuSlider1.IndicatorColor = System.Drawing.Color.SeaGreen;
-            this.bunifuSlider1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuSlider1.Location = new System.Drawing.Point(24, 12);
             this.bunifuSlider1.MaximumValue = 100;
             this.bunifuSlider1.Name = "bunifuSlider1";
             this.bunifuSlider1.Size = new System.Drawing.Size(415, 28);
@@ -158,6 +158,7 @@
             this.Controls.Add(this.bunifuThinButton21);
             this.Name = "m2lAteliers";
             this.Size = new System.Drawing.Size(679, 420);
+            this.Load += new System.EventHandler(this.m2lAteliers_Load);
             this.ResumeLayout(false);
 
         }
