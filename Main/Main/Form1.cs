@@ -15,6 +15,7 @@ namespace Main
         public mainForm()
         {
             InitializeComponent();
+            this.Controls.Add(new m2lAteliers());
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -27,9 +28,14 @@ namespace Main
             WindowState = FormWindowState.Minimized; // Minimze the app in toolbar
         }
 
+        private void btnAteliers_Click(object sender, EventArgs e)
+        {
+            m2lAteliers1.BringToFront();
+        }
+
         private void btnParticipants_Click(object sender, EventArgs e)
         {
-            m2lParticipants.
+            m2lParticipants1.BringToFront();
         }
     }
 }

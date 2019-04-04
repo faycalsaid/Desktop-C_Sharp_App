@@ -32,14 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnHotels = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnStands = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnParticipants = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAteliers = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMinimizeApp = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.btnStands = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnHotels = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.m2lParticipants1 = new Main.m2lParticipants();
+            this.m2lAteliers1 = new Main.m2lAteliers();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).BeginInit();
@@ -69,6 +71,74 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(235, 433);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // btnHotels
+            // 
+            this.btnHotels.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnHotels.BackColor = System.Drawing.Color.Transparent;
+            this.btnHotels.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHotels.BorderRadius = 0;
+            this.btnHotels.ButtonText = " Hotels";
+            this.btnHotels.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHotels.DisabledColor = System.Drawing.Color.Gray;
+            this.btnHotels.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnHotels.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnHotels.Iconimage")));
+            this.btnHotels.Iconimage_right = null;
+            this.btnHotels.Iconimage_right_Selected = null;
+            this.btnHotels.Iconimage_Selected = null;
+            this.btnHotels.IconMarginLeft = 0;
+            this.btnHotels.IconMarginRight = 0;
+            this.btnHotels.IconRightVisible = true;
+            this.btnHotels.IconRightZoom = 0D;
+            this.btnHotels.IconVisible = true;
+            this.btnHotels.IconZoom = 90D;
+            this.btnHotels.IsTab = false;
+            this.btnHotels.Location = new System.Drawing.Point(0, 226);
+            this.btnHotels.Name = "btnHotels";
+            this.btnHotels.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnHotels.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnHotels.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnHotels.selected = false;
+            this.btnHotels.Size = new System.Drawing.Size(235, 48);
+            this.btnHotels.TabIndex = 3;
+            this.btnHotels.Text = " Hotels";
+            this.btnHotels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHotels.Textcolor = System.Drawing.Color.White;
+            this.btnHotels.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnStands
+            // 
+            this.btnStands.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnStands.BackColor = System.Drawing.Color.Transparent;
+            this.btnStands.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStands.BorderRadius = 0;
+            this.btnStands.ButtonText = "Stands";
+            this.btnStands.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStands.DisabledColor = System.Drawing.Color.Gray;
+            this.btnStands.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnStands.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnStands.Iconimage")));
+            this.btnStands.Iconimage_right = null;
+            this.btnStands.Iconimage_right_Selected = null;
+            this.btnStands.Iconimage_Selected = null;
+            this.btnStands.IconMarginLeft = 0;
+            this.btnStands.IconMarginRight = 0;
+            this.btnStands.IconRightVisible = true;
+            this.btnStands.IconRightZoom = 0D;
+            this.btnStands.IconVisible = true;
+            this.btnStands.IconZoom = 90D;
+            this.btnStands.IsTab = false;
+            this.btnStands.Location = new System.Drawing.Point(0, 172);
+            this.btnStands.Name = "btnStands";
+            this.btnStands.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnStands.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnStands.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnStands.selected = false;
+            this.btnStands.Size = new System.Drawing.Size(235, 48);
+            this.btnStands.TabIndex = 2;
+            this.btnStands.Text = "Stands";
+            this.btnStands.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStands.Textcolor = System.Drawing.Color.White;
+            this.btnStands.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnParticipants
             // 
@@ -138,6 +208,7 @@
             this.btnAteliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAteliers.Textcolor = System.Drawing.Color.White;
             this.btnAteliers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAteliers.Click += new System.EventHandler(this.btnAteliers_Click);
             // 
             // panel1
             // 
@@ -184,79 +255,29 @@
             this.bunifuDragControl1.TargetControl = this.panel1;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // btnStands
+            // m2lParticipants1
             // 
-            this.btnStands.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnStands.BackColor = System.Drawing.Color.Transparent;
-            this.btnStands.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStands.BorderRadius = 0;
-            this.btnStands.ButtonText = "Stands";
-            this.btnStands.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStands.DisabledColor = System.Drawing.Color.Gray;
-            this.btnStands.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnStands.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnStands.Iconimage")));
-            this.btnStands.Iconimage_right = null;
-            this.btnStands.Iconimage_right_Selected = null;
-            this.btnStands.Iconimage_Selected = null;
-            this.btnStands.IconMarginLeft = 0;
-            this.btnStands.IconMarginRight = 0;
-            this.btnStands.IconRightVisible = true;
-            this.btnStands.IconRightZoom = 0D;
-            this.btnStands.IconVisible = true;
-            this.btnStands.IconZoom = 90D;
-            this.btnStands.IsTab = false;
-            this.btnStands.Location = new System.Drawing.Point(0, 172);
-            this.btnStands.Name = "btnStands";
-            this.btnStands.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnStands.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnStands.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnStands.selected = false;
-            this.btnStands.Size = new System.Drawing.Size(235, 48);
-            this.btnStands.TabIndex = 2;
-            this.btnStands.Text = "Stands";
-            this.btnStands.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStands.Textcolor = System.Drawing.Color.White;
-            this.btnStands.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m2lParticipants1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m2lParticipants1.Location = new System.Drawing.Point(235, 20);
+            this.m2lParticipants1.Name = "m2lParticipants1";
+            this.m2lParticipants1.Size = new System.Drawing.Size(673, 433);
+            this.m2lParticipants1.TabIndex = 2;
             // 
-            // btnHotels
+            // m2lAteliers1
             // 
-            this.btnHotels.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnHotels.BackColor = System.Drawing.Color.Transparent;
-            this.btnHotels.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHotels.BorderRadius = 0;
-            this.btnHotels.ButtonText = " Hotels";
-            this.btnHotels.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHotels.DisabledColor = System.Drawing.Color.Gray;
-            this.btnHotels.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnHotels.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnHotels.Iconimage")));
-            this.btnHotels.Iconimage_right = null;
-            this.btnHotels.Iconimage_right_Selected = null;
-            this.btnHotels.Iconimage_Selected = null;
-            this.btnHotels.IconMarginLeft = 0;
-            this.btnHotels.IconMarginRight = 0;
-            this.btnHotels.IconRightVisible = true;
-            this.btnHotels.IconRightZoom = 0D;
-            this.btnHotels.IconVisible = true;
-            this.btnHotels.IconZoom = 90D;
-            this.btnHotels.IsTab = false;
-            this.btnHotels.Location = new System.Drawing.Point(0, 226);
-            this.btnHotels.Name = "btnHotels";
-            this.btnHotels.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnHotels.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnHotels.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnHotels.selected = false;
-            this.btnHotels.Size = new System.Drawing.Size(235, 48);
-            this.btnHotels.TabIndex = 3;
-            this.btnHotels.Text = " Hotels";
-            this.btnHotels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHotels.Textcolor = System.Drawing.Color.White;
-            this.btnHotels.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m2lAteliers1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m2lAteliers1.Location = new System.Drawing.Point(235, 20);
+            this.m2lAteliers1.Name = "m2lAteliers1";
+            this.m2lAteliers1.Size = new System.Drawing.Size(673, 433);
+            this.m2lAteliers1.TabIndex = 3;
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 453);
+            this.Controls.Add(this.m2lAteliers1);
+            this.Controls.Add(this.m2lParticipants1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -282,6 +303,8 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuFlatButton btnHotels;
         private Bunifu.Framework.UI.BunifuFlatButton btnStands;
+        private m2lParticipants m2lParticipants1;
+        private m2lAteliers m2lAteliers1;
     }
 }
 
