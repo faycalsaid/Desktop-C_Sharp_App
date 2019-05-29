@@ -158,7 +158,6 @@
             this.Controls.Add(this.bunifuThinButton21);
             this.Name = "m2lAteliers";
             this.Size = new System.Drawing.Size(679, 420);
-            this.Load += new System.EventHandler(this.m2lAteliers_Load);
             this.ResumeLayout(false);
 
         }

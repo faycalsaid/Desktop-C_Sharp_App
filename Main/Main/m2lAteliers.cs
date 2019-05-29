@@ -9,9 +9,5 @@ namespace Main
             InitializeComponent();
         }
 
-        private void m2lAteliers_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
