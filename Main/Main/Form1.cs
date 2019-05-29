@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Main
@@ -15,7 +8,6 @@ namespace Main
         public mainForm()
         {
             InitializeComponent();
-            this.Controls.Add(new m2lAteliers());
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -36,6 +28,16 @@ namespace Main
         private void btnParticipants_Click(object sender, EventArgs e)
         {
             m2lParticipants1.BringToFront();
+        }
+
+        private void btnStands_Click(object sender, EventArgs e)
+        {
+            m2lStands1.BringToFront();
+        }
+
+        private void BtnHotels_Click(object sender, EventArgs e)
+        {
+            m2lHotel1.BringToFront();
         }
     }
 }
