@@ -99,6 +99,15 @@ namespace Main
         {
             panelContainer.Controls["m2lStands"].Refresh();
             panelContainer.Controls["m2lStands"].BringToFront();
+            foreach (Control item in panelContainer.Controls)
+            {
+                if (item.Name == "confirmStandsModal")
+                {
+                    panelContainer.Controls.Remove(item);
+                    break; //important step
+                }
+            }
+            
             btnReturn.Visible = false;
         }
     }
