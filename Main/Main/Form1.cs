@@ -12,7 +12,6 @@ namespace Main
         public mainForm()
         {
             InitializeComponent();
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -97,17 +96,33 @@ namespace Main
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
-            panelContainer.Controls["m2lStands"].Refresh();
-            panelContainer.Controls["m2lStands"].BringToFront();
+ 
             foreach (Control item in panelContainer.Controls)
             {
                 if (item.Name == "confirmStandsModal")
                 {
                     panelContainer.Controls.Remove(item);
-                    break; //important step
+                    item.Dispose(); // Release all the resources used by the control
+                    break; 
                 }
             }
-            
+
+            foreach (Control item in panelContainer.Controls)
+            {
+                if (item.Name == "m2lStands")
+                {
+                    panelContainer.Controls.Remove(item);
+                    item.Dispose(); // Release all the resources used by the control
+                    break;
+                }
+            }
+
+            m2lStands ucStands = new m2lStands();
+            ucStands.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(ucStands);
+
+            panelContainer.Controls["m2lStands"].BringToFront();
+
             btnReturn.Visible = false;
         }
     }

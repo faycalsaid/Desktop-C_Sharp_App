@@ -22,8 +22,9 @@ namespace Main
         }
 
         //initialize the flowLayout with cards
-        private void initFlowLayout()
+        public void initFlowLayout()
         {
+           
             for (int i = 0; i < standsList.Count(); i++)
             {
                 BunifuCards card = generateCard(i);

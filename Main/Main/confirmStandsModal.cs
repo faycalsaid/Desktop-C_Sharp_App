@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Main.DAO;
 
 namespace Main
 {
@@ -25,11 +26,13 @@ namespace Main
             this.initValues();
 
             this.Focus();
+
+            testInsert();
         }
 
-        public void testLog()
+        public void testInsert()
         {
-            Console.WriteLine(location +" "+area+" "+dbId);
+            DAOStands.atributePartner(2,2);
         }
 
         private void initValues ()
