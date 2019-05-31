@@ -31,22 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMinimizeApp = new Bunifu.Framework.UI.BunifuImageButton();
+            this.topPanel = new System.Windows.Forms.Panel();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnReturn = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMinimizeApp = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.m2lHotel1 = new Main.m2lHotel();
-            this.m2lStands1 = new Main.m2lStands();
-            this.m2lAteliers1 = new Main.m2lAteliers();
             this.btnHotels = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnStands = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnParticipants = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAteliers = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.m2lParticipants1 = new Main.m2lParticipants();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).BeginInit();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,38 +54,26 @@
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // panel1
+            // topPanel
             // 
-            this.panel1.Controls.Add(this.btnMinimizeApp);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1233, 25);
-            this.panel1.TabIndex = 1;
-            // 
-            // btnMinimizeApp
-            // 
-            this.btnMinimizeApp.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizeApp.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizeApp.Image")));
-            this.btnMinimizeApp.ImageActive = null;
-            this.btnMinimizeApp.Location = new System.Drawing.Point(1156, 0);
-            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMinimizeApp.Name = "btnMinimizeApp";
-            this.btnMinimizeApp.Size = new System.Drawing.Size(32, 25);
-            this.btnMinimizeApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizeApp.TabIndex = 3;
-            this.btnMinimizeApp.TabStop = false;
-            this.btnMinimizeApp.Zoom = 10;
-            this.btnMinimizeApp.Click += new System.EventHandler(this.btnMinimizeApp_Click);
+            this.topPanel.AllowDrop = true;
+            this.topPanel.Controls.Add(this.btnClose);
+            this.topPanel.Controls.Add(this.btnReturn);
+            this.topPanel.Controls.Add(this.btnMinimizeApp);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.topPanel.Size = new System.Drawing.Size(1359, 41);
+            this.topPanel.TabIndex = 1;
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageActive = null;
-            this.btnClose.Location = new System.Drawing.Point(1196, 0);
+            this.btnClose.Location = new System.Drawing.Point(1314, 4);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 25);
@@ -96,60 +83,61 @@
             this.btnClose.Zoom = 10;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.Image = global::Main.Properties.Resources._return;
+            this.btnReturn.ImageActive = null;
+            this.btnReturn.Location = new System.Drawing.Point(239, 0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(66, 42);
+            this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnReturn.TabIndex = 5;
+            this.btnReturn.TabStop = false;
+            this.btnReturn.Zoom = 10;
+            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
+            // 
+            // btnMinimizeApp
+            // 
+            this.btnMinimizeApp.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizeApp.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizeApp.Image")));
+            this.btnMinimizeApp.ImageActive = null;
+            this.btnMinimizeApp.Location = new System.Drawing.Point(1274, 4);
+            this.btnMinimizeApp.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimizeApp.Name = "btnMinimizeApp";
+            this.btnMinimizeApp.Size = new System.Drawing.Size(32, 25);
+            this.btnMinimizeApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizeApp.TabIndex = 3;
+            this.btnMinimizeApp.TabStop = false;
+            this.btnMinimizeApp.Zoom = 10;
+            this.btnMinimizeApp.Click += new System.EventHandler(this.btnMinimizeApp_Click);
+            // 
             // bunifuDragControl1
             // 
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.m2lParticipants1);
-            this.bunifuGradientPanel1.Controls.Add(this.m2lHotel1);
-            this.bunifuGradientPanel1.Controls.Add(this.m2lStands1);
-            this.bunifuGradientPanel1.Controls.Add(this.m2lAteliers1);
             this.bunifuGradientPanel1.Controls.Add(this.btnHotels);
             this.bunifuGradientPanel1.Controls.Add(this.btnStands);
             this.bunifuGradientPanel1.Controls.Add(this.btnParticipants);
             this.bunifuGradientPanel1.Controls.Add(this.btnAteliers);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.DeepPink;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.BlueViolet;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Blue;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Azure;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 25);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 41);
             this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1233, 570);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(247, 672);
             this.bunifuGradientPanel1.TabIndex = 0;
-            // 
-            // m2lHotel1
-            // 
-            this.m2lHotel1.Location = new System.Drawing.Point(315, 0);
-            this.m2lHotel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.m2lHotel1.Name = "m2lHotel1";
-            this.m2lHotel1.Size = new System.Drawing.Size(918, 570);
-            this.m2lHotel1.TabIndex = 5;
-            // 
-            // m2lStands1
-            // 
-            this.m2lStands1.AutoScroll = true;
-            this.m2lStands1.Location = new System.Drawing.Point(315, 0);
-            this.m2lStands1.Name = "m2lStands1";
-            this.m2lStands1.Size = new System.Drawing.Size(918, 570);
-            this.m2lStands1.TabIndex = 4;
-            // 
-            // m2lAteliers1
-            // 
-            this.m2lAteliers1.Location = new System.Drawing.Point(315, 0);
-            this.m2lAteliers1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.m2lAteliers1.Name = "m2lAteliers1";
-            this.m2lAteliers1.Size = new System.Drawing.Size(918, 570);
-            this.m2lAteliers1.TabIndex = 2;
             // 
             // btnHotels
             // 
@@ -180,7 +168,7 @@
             this.btnHotels.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnHotels.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHotels.selected = false;
-            this.btnHotels.Size = new System.Drawing.Size(307, 61);
+            this.btnHotels.Size = new System.Drawing.Size(247, 65);
             this.btnHotels.TabIndex = 3;
             this.btnHotels.Text = " Hotels";
             this.btnHotels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -217,7 +205,7 @@
             this.btnStands.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnStands.OnHoverTextColor = System.Drawing.Color.White;
             this.btnStands.selected = false;
-            this.btnStands.Size = new System.Drawing.Size(307, 61);
+            this.btnStands.Size = new System.Drawing.Size(247, 65);
             this.btnStands.TabIndex = 1;
             this.btnStands.Text = "Stands";
             this.btnStands.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -254,13 +242,13 @@
             this.btnParticipants.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnParticipants.OnHoverTextColor = System.Drawing.Color.White;
             this.btnParticipants.selected = false;
-            this.btnParticipants.Size = new System.Drawing.Size(309, 61);
+            this.btnParticipants.Size = new System.Drawing.Size(247, 65);
             this.btnParticipants.TabIndex = 1;
             this.btnParticipants.Text = "Participants";
             this.btnParticipants.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParticipants.Textcolor = System.Drawing.Color.White;
             this.btnParticipants.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnParticipants.Click += new System.EventHandler(this.btnParticipants_Click);
+            this.btnParticipants.Click += new System.EventHandler(this.BtnParticipants_Click);
             // 
             // btnAteliers
             // 
@@ -291,36 +279,40 @@
             this.btnAteliers.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnAteliers.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAteliers.selected = false;
-            this.btnAteliers.Size = new System.Drawing.Size(314, 61);
+            this.btnAteliers.Size = new System.Drawing.Size(247, 65);
             this.btnAteliers.TabIndex = 0;
             this.btnAteliers.Text = "Ateliers";
             this.btnAteliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAteliers.Textcolor = System.Drawing.Color.White;
             this.btnAteliers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAteliers.Click += new System.EventHandler(this.btnAteliers_Click);
+            this.btnAteliers.Click += new System.EventHandler(this.BtnAteliers_Click);
             // 
-            // m2lParticipants1
+            // panelContainer
             // 
-            this.m2lParticipants1.Location = new System.Drawing.Point(315, 0);
-            this.m2lParticipants1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.m2lParticipants1.Name = "m2lParticipants1";
-            this.m2lParticipants1.Size = new System.Drawing.Size(918, 570);
-            this.m2lParticipants1.TabIndex = 6;
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(247, 41);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1112, 672);
+            this.panelContainer.TabIndex = 2;
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 595);
+            this.ClientSize = new System.Drawing.Size(1359, 713);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.topPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.topPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -330,7 +322,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel topPanel;
         private Bunifu.Framework.UI.BunifuImageButton btnClose;
         private Bunifu.Framework.UI.BunifuImageButton btnMinimizeApp;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
@@ -339,10 +331,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnStands;
         private Bunifu.Framework.UI.BunifuFlatButton btnParticipants;
         private Bunifu.Framework.UI.BunifuFlatButton btnAteliers;
-        private m2lAteliers m2lAteliers1;
-        private m2lStands m2lStands1;
-        private m2lHotel m2lHotel1;
-        private m2lParticipants m2lParticipants1;
+        private Bunifu.Framework.UI.BunifuImageButton btnReturn;
+        private System.Windows.Forms.Panel panelContainer;
     }
 }
 
