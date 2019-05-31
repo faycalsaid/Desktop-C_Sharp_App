@@ -51,6 +51,20 @@ namespace Main.DAO
             return standsList;
         }
 
+        public static void atributePartner(int partnerId ,int standId )
+        {
+            DAOFactory DB = new DAOFactory();
+            DB.connexion();
+            DB.connecter();
+
+            //Using the @ (verbatim literal) to eliminate all the quotes and concatenations
+            String requete = "UPDATE Stand SET id_partenaire = " + partnerId + "where id = " + standId + ";" ;
+
+            DB.execSqlWrite(requete);
+
+
+        }
+
 
 
 
