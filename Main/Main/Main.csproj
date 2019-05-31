@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="confirmStandsModal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="confirmStandsModal.Designer.cs">
+      <DependentUpon>confirmStandsModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\DAOFactory.cs" />
     <Compile Include="DAO\DAOHotel.cs" />
     <Compile Include="DAO\DAOPartenaires.cs" />
@@ -95,6 +101,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="confirmStandsModal.resx">
+      <DependentUpon>confirmStandsModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\new-24-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,6 +12,8 @@ namespace Main
     public partial class m2lStands : UserControl
     {
         private List<Stands> standsList = DAOStands.getAllStands();
+        private List<Partenaire> partnersList = DAOPartenaires.getAllPartners();
+        private string[] partnersNouns = DAOPartenaires.partnersNouns().ToArray();
         public m2lStands()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace Main
             {
                 BunifuCards card = generateCard(i);
                 this.flowLayoutPanel1.Controls.Add(card);
+                this.flowLayoutPanel1.Dock = DockStyle.Fill;
             }
         }
 
@@ -36,15 +39,18 @@ namespace Main
             BunifuCards card = new BunifuCards();
             card.Name = "bCards_" + i.ToString();
             card.Size = new Size(157, 188);
+            card.color = Color.BlueViolet;
+            card.Margin = new Padding(5, 2, 5, 2);
             card.Controls.Add(generateAreaLabel(i));
             card.Controls.Add(generateLocationLabel(i));
             card.Controls.Add(generatAreaValueLabel(i));
             card.Controls.Add(generateLocationValueLabel(i));
-            Console.WriteLine(standsList[i].Available);
+
             if (standsList[i].Available)
             {
                 card.Controls.Add(generateAvailabilityIcon(i));
-                card.Controls.Add(generatePartnersList(i));
+                card.Controls.Add(generatetAributeStandBtn(i));
+                //card.Controls.Add(generatePartnersList(i));
             }
             else
             {
@@ -52,6 +58,7 @@ namespace Main
                 card.Controls.Add(generatePartnerLabel(i));
 
             }
+            Console.WriteLine("Card Id :" + card.Name.Last().ToString());
             return card;
         }
 
@@ -96,6 +103,7 @@ namespace Main
             label.Text = standsList[i].NumAllee.ToString() + " " + standsList[i].NumOrdre.ToString();
             label.Location = new Point(92, 43);
             label.AutoSize = true;
+            label.ForeColor = System.Drawing.Color.Red;
 
             return label;
         }
@@ -103,7 +111,7 @@ namespace Main
         private BunifuImageButton generateAvailabilityIcon(int i)
         {
             BunifuImageButton icon = new BunifuImageButton();
-            icon.BackColor = System.Drawing.Color.Transparent;
+            icon.BackColor = Color.Transparent;
             icon.Name = "bImage_AvailableIcon" + i.ToString();
             icon.Image = global::Main.Properties.Resources.availableBooking;
             icon.Location = new Point(113, 145);
@@ -149,25 +157,49 @@ namespace Main
         }
 
 
-        private BunifuDropdown generatePartnersList(int i)
-        {
-            BunifuDropdown dropDown = new BunifuDropdown();
-            dropDown.Name = "bDropdown_Partners_" + i.ToString();
-            dropDown.Items = DAOPartenaires.partnersNouns().ToArray();
-            dropDown.Location = new Point(23, 96);
-            dropDown.Size = new Size(101, 42);
-            dropDown.AutoSize = true;
+        //private BunifuDropdown generatePartnersList(int i)
+        //{
+        //    BunifuDropdown dropDown = new BunifuDropdown();
+        //    dropDown.Name = "bDropdown_Partners_" + i.ToString();
+        //    dropDown.Items = partnersNouns;
+        //    dropDown.Location = new Point(23, 96);
+        //    dropDown.Size = new Size(101, 42);
+        //    dropDown.AutoSize = true;
 
-            return dropDown;
+        //    return dropDown;
+        //}
+
+        private BunifuThinButton2 generatetAributeStandBtn(int i)
+        {
+            BunifuThinButton2 button = new BunifuThinButton2();
+            button.Name = "attributeBtn_" + i.ToString();
+            button.Click += new EventHandler(this.generateStandAffectModal);
+            button.Size = new Size(114, 39);
+            button.Location = new Point(18, 72);
+            return button;
         }
 
 
+        private void generateStandAffectModal(object sender, System.EventArgs e)
+        {
+          
+            var btn = sender as BunifuThinButton2;
+            var i = int.Parse(btn.Name.Last().ToString());
+
+            string location = standsList[i].NumAllee.ToString() + " " + standsList[i].NumOrdre.ToString();
+            string area = standsList[i].Area.ToString() + " M²";
+            int id = standsList[i].Id;
+
+            confirmStandsModal actualModal = new confirmStandsModal(location, area, id);
+            actualModal.Dock = DockStyle.Fill;
+            mainForm.Instance.PnlContainer.Controls.Add(actualModal);
+
+            mainForm.Instance.PnlContainer.Controls["confirmStandsModal"].BringToFront();
+            mainForm.Instance.ReturnButton.Visible = true;
 
 
-
-
-
-
+           
+        }
 
     }
 }
