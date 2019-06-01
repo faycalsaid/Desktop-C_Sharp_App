@@ -85,11 +85,8 @@
     <Compile Include="m2lAteliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="m2lAteliers.Designer.cs" />
-    <Compile Include="m2lAteliers1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>m2lAteliers.resx</DependentUpon>
+    <Compile Include="m2lAteliers.Designer.cs">
+      <DependentUpon>m2lAteliers.cs</DependentUpon>
     </Compile>
     <Compile Include="m2lHotel.cs">
       <SubType>UserControl</SubType>
@@ -118,8 +115,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="m2lAteliers.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>m2lAteliers1.Designer.cs</LastGenOutput>
+      <DependentUpon>m2lAteliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="m2lHotel.resx">
       <DependentUpon>m2lHotel.cs</DependentUpon>
