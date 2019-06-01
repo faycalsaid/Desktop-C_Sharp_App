@@ -40,6 +40,9 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>D:\Faycal\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -82,7 +85,9 @@
     <Compile Include="m2lAteliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="m2lAteliers.Designer.cs" />
+    <Compile Include="m2lAteliers.Designer.cs">
+      <DependentUpon>m2lAteliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="m2lHotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,7 +114,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="m2lAteliers.resx" />
+    <EmbeddedResource Include="m2lAteliers.resx">
+      <DependentUpon>m2lAteliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="m2lHotel.resx">
       <DependentUpon>m2lHotel.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +133,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
