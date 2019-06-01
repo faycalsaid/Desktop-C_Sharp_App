@@ -82,7 +82,9 @@
     <Compile Include="m2lAteliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="m2lAteliers.Designer.cs" />
+    <Compile Include="m2lAteliers.Designer.cs">
+      <DependentUpon>m2lAteliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="m2lHotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,7 +111,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="m2lAteliers.resx" />
+    <EmbeddedResource Include="m2lAteliers.resx">
+      <DependentUpon>m2lAteliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="m2lHotel.resx">
       <DependentUpon>m2lHotel.cs</DependentUpon>
     </EmbeddedResource>
