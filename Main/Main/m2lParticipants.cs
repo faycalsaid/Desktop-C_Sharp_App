@@ -16,7 +16,7 @@ namespace Main
 {
     public partial class m2lParticipants : UserControl
     {
-        private Dictionary<int, string> comboSource = new Dictionary<int, string>();
+        private Dictionary<int, string> cSTypeParticipant = new Dictionary<int, string>();
 
         public m2lParticipants()
         {
@@ -26,7 +26,7 @@ namespace Main
         private void m2lParticipants_Load(object sender, EventArgs e)
         {
             initParticipants();
-            initHotel();
+            initTypeParticipant();
         }
 
         #region Btn DGV
@@ -46,7 +46,7 @@ namespace Main
             }
             else
             {
-                Int32 key = ((KeyValuePair<int, String>)cBoxHotel.SelectedItem).Key;
+                Int32 key = ((KeyValuePair<int, String>)cBoxType.SelectedItem).Key;
 
                 DAOParticipants.addParticipant(txtBoxNom.Text,
                         txtBoxPrenom.Text, key);
@@ -113,31 +113,41 @@ namespace Main
             //Participant unPart = new Participant(1, "m2l", "mtrp");
             dgvParticipants.DataSource = null;
             dgvParticipants.DataSource = DAOParticipants.getAllParticipants();
-
+            dgvParticipants.Columns["idType"].Visible = false;
 
             // on redimensionne automatiquement la largeur des colonnes du datagridview
             dgvParticipants.AutoResizeColumns();
 
         }
 
-        public void initHotel()
+        public void initTypeParticipant()
         {
-            comboSource.Clear();
 
-            foreach (Hotel unHotel in DAOHotel.getAllHotels())
+
+            foreach (TypeParticipant unType in DAOParticipants.getAllTypePartcipant())
             {
-                comboSource.Add(unHotel.IdHotel, unHotel.Name);
+
+                cSTypeParticipant.Add(unType.IdTypeParticipant, unType.Libelle);
             }
 
-            cBoxHotel.DataSource = new BindingSource(comboSource, null);
-            cBoxHotel.DisplayMember = "Value";
-            cBoxHotel.ValueMember = "Key";
+            cBoxType.DataSource = new BindingSource(cSTypeParticipant, null);
+            cBoxType.DisplayMember = "Value";
+            cBoxType.ValueMember = "Key";
         }
         #endregion
 
-        private void cBoxHotel_Enter(object sender, EventArgs e)
+
+        private void DgvParticipants_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            initHotel();
+            if (dgvParticipants.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dgvParticipants.CurrentRow.Selected = true;
+
+                txtBoxNom.Text = dgvParticipants.Rows[e.RowIndex].Cells["FirstNameParticipant"].FormattedValue.ToString();
+                txtBoxPrenom.Text = dgvParticipants.Rows[e.RowIndex].Cells["LastNameParticipant"].FormattedValue.ToString();
+
+                cBoxType.SelectedIndex = Convert.ToInt32(dgvParticipants.Rows[e.RowIndex].Cells["idType"].Value.ToString()) - 1;
+            }
         }
     }
 }

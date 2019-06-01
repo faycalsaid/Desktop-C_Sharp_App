@@ -31,46 +31,5 @@ namespace Main.DAO
 
             return theHotels;
         }
-
-
-        public static void addHotel(String nom, String adresse)
-        {
-            DAOFactory db = new DAOFactory();
-
-            db.connexion();
-            db.connecter();
-
-            string req = "INSERT INTO Hotel (nom, adresse) VALUES ('" + nom + "', '" + adresse + "')";
-            Console.WriteLine(req);
-
-            db.execSqlWrite(req);
-            db.deconnecter();
-        }
-
-        public static void editHotel(Int32 id, String nom, String adresse)
-        {
-            DAOFactory db = new DAOFactory();
-
-            db.connexion();
-            db.connecter();
-
-            string req = "UPDATE Hotel SET nom = '" + nom + "', adresse= '" + adresse + "' WHERE id = '" + id + "'";
-
-            db.execSqlWrite(req);
-            db.deconnecter();
-        }
-
-        public static void delHotel(Int32 id)
-        {
-            DAOFactory db = new DAOFactory();
-
-            db.connexion();
-            db.connecter();
-
-            string req = "DELETE FROM Hotel WHERE id = '" + id + "'";
-
-            db.execSqlWrite(req);
-            db.deconnecter();
-        }
     }
 }
