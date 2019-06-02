@@ -54,7 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\packages\BunifuUI.1.52\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>D:\Users\ABDULLAHI\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjouterAtelier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AjouterAtelier.Designer.cs">
+      <DependentUpon>AjouterAtelier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Authentication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     <Compile Include="standAllocation.Designer.cs">
       <DependentUpon>standAllocation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AjouterAtelier.resx">
+      <DependentUpon>AjouterAtelier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
     </EmbeddedResource>

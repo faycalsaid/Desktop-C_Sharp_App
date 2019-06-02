@@ -103,9 +103,7 @@ namespace Main
             {
 
                 if (item.Name == "confirmStandsModal" || item.Name ==  "ModifierAtelierModal")
-
-                if (item.Name == "standAllocation")
-                {
+                { 
                     panelContainer.Controls.Remove(item);
                     item.Dispose(); // Release all the resources used by the control
                     break;
@@ -131,7 +129,7 @@ namespace Main
 
             m2lAteliers ucAtelier = new m2lAteliers();
             ucStands.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(ucStands);
+            panelContainer.Controls.Add(ucAtelier);
 
             panelContainer.Controls["m2lAteliers"].BringToFront();
 

@@ -106,7 +106,7 @@ namespace Main.DAO
             fa.connecter();
 
             string requete = "insert into Atelier (libelle, capacite, horaireDebut, horaireFin) values ('" + unAtelier.Libelle + "','" + unAtelier.Capacite + "','"
-    + unAtelier.HoraireDebut + "','" + unAtelier.HoraireFin + "');";
+    + Convert.ToDateTime(unAtelier.HoraireDebut) + "','" +Convert.ToDateTime(unAtelier.HoraireFin)+ "');";
 
             fa.execSqlWrite(requete);
             fa.deconnecter();
@@ -125,15 +125,31 @@ namespace Main.DAO
         }
 
 
+        public void supprimerAtelier(int atelierId)
+        {
+            DAOFactory dao = new DAOFactory();
+            dao.connexion();
 
-           
+            dao.connecter();
+            string requete = @"delete from Theme_atelier where id_atelier ="+ atelierId +
+                                "delete from Atelier where id =" + atelierId + ";";
 
-
-
-
-
-
+            dao.execSqlWrite(requete);
+            dao.deconnecter();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 
     }

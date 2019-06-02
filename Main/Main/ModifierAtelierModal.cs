@@ -63,6 +63,7 @@ namespace Main
 
         private void btnModifValid_Click(object sender, EventArgs e)
         {
+            m2lAteliers atelierAjout = new m2lAteliers();
             Atelier unAtelier;
             DAOAtelier atelier = new DAOAtelier();
             
@@ -71,9 +72,30 @@ namespace Main
             unAtelier = new Atelier(atelierId, txbNomModif.Text,capactieModif, dtpDebut.Value, dtpFin.Value);
 
             atelier.modifierAtelier(unAtelier);
-          
+
+            atelierAjout.Refresh();
+
         }
 
-       
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            DAOAtelier suppr = new DAOAtelier();
+            m2lAteliers atelierAjout = new m2lAteliers();
+
+            suppr.supprimerAtelier(atelierId);
+
+           
+
+
+                
+
+            
+
+        
+
+
+
+
+        }
     }
 }

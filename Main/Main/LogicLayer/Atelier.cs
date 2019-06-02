@@ -130,7 +130,16 @@ namespace Main.LogicLayer
 
         }
 
-        
+        public Atelier(string unLibelle, int uneCapacite, DateTime unHoraireDebut, DateTime unHoraireFin)
+        {
+            this.libelle = unLibelle;
+            this.capacite = uneCapacite;
+            this.horaireDebut = unHoraireDebut;
+            this.horaireFin = unHoraireFin;
+
+        }
+
+
         #endregion
     }
 }
