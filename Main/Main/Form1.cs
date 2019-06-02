@@ -66,6 +66,39 @@ namespace Main
             panelContainer.Controls["m2lStands"].BringToFront();          
         }
 
+        private void BtnReturn_Click(object sender, EventArgs e)
+        {
+            //Delete 
+
+            foreach (Control item in panelContainer.Controls)
+            {
+                if (item.Name == "standAllocation")
+                {
+                    panelContainer.Controls.Remove(item);
+                    item.Dispose(); // Release all the resources used by the control
+                    break;
+                }
+            }
+
+            foreach (Control item in panelContainer.Controls)
+            {
+                if (item.Name == "m2lStands")
+                {
+                    panelContainer.Controls.Remove(item);
+                    item.Dispose(); // Release all the resources used by the control
+                    break;
+                }
+            }
+
+            m2lStands ucStands = new m2lStands();
+            ucStands.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(ucStands);
+
+            panelContainer.Controls["m2lStands"].BringToFront();
+
+            btnReturn.Visible = false;
+        }
+
 
         //Return an instance of actual form (Made for Stands)
         //@Feycce
@@ -94,36 +127,6 @@ namespace Main
             set { btnReturn = value; }
         }
 
-        private void BtnReturn_Click(object sender, EventArgs e)
-        {
- 
-            foreach (Control item in panelContainer.Controls)
-            {
-                if (item.Name == "confirmStandsModal")
-                {
-                    panelContainer.Controls.Remove(item);
-                    item.Dispose(); // Release all the resources used by the control
-                    break; 
-                }
-            }
-
-            foreach (Control item in panelContainer.Controls)
-            {
-                if (item.Name == "m2lStands")
-                {
-                    panelContainer.Controls.Remove(item);
-                    item.Dispose(); // Release all the resources used by the control
-                    break;
-                }
-            }
-
-            m2lStands ucStands = new m2lStands();
-            ucStands.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(ucStands);
-
-            panelContainer.Controls["m2lStands"].BringToFront();
-
-            btnReturn.Visible = false;
-        }
+        
     }
 }
