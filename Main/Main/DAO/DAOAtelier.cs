@@ -29,14 +29,25 @@ namespace Main.DAO
             string requete = (" SELECT * from Atelier ");
             SqlDataReader monDR = fa.execSqlRead(requete);
 
-            while (monDR.Read())
-            { 
-
+            
+            
                 requete2 = ("SELECT id_theme,theme_atelier.libelle from theme_atelier inner join Atelier on theme_atelier.id_theme = Atelier.id where id_atelier =" + Convert.ToInt32(monDR.Read()));
 
+        
 
-        }
-            
+                SqlDataReader monFR = da.execSqlRead(requete2);
+
+
+
+
+
+
+                while (monFR.Read())
+                {
+                    Theme monTheme = new Theme(Convert.ToInt32(monFR[0]), monFR[1].ToString());
+                    MesTheme.Add(monTheme);
+                }
+                
 
 
                 
