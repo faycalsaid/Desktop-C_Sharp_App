@@ -10,7 +10,7 @@ namespace Main.DAO
 
         public void connexion()
         {
-            maConnexion = new SqlConnection("Data Source =(localdb)\\MyInstance; Initial Catalog = M2L_Mahfoud; User Id = root; Password = root; ");
+            maConnexion = new SqlConnection("Data Source =(localdb)\\MyInstance; Initial Catalog = M2L_Prod; User Id = root; Password = root; ");
         }
 
         public void connecter()

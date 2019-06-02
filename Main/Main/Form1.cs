@@ -95,33 +95,6 @@ namespace Main
         }
 
 
-        public static mainForm Instance
-        {
-            get
-            {
-                if (_obj == null)
-                {
-                    _obj = new mainForm();
-                }
-
-                return _obj;
-            }
-        }
-
-        public Panel PnlContainer
-        {
-            get { return panelContainer; }
-            set { panelContainer = value; }
-        }
-
-
-        public BunifuImageButton ReturnButton
-        {
-            get { return btnReturn; }
-            set { btnReturn = value; }
-        }
-
-
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             //Delete 
