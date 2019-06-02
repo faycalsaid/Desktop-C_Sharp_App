@@ -94,12 +94,43 @@ namespace Main
             panelContainer.Controls["m2lStands"].BringToFront();          
         }
 
+
+        public static mainForm Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new mainForm();
+                }
+
+                return _obj;
+            }
+        }
+
+        public Panel PnlContainer
+        {
+            get { return panelContainer; }
+            set { panelContainer = value; }
+        }
+
+
+        public BunifuImageButton ReturnButton
+        {
+            get { return btnReturn; }
+            set { btnReturn = value; }
+        }
+
+
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             //Delete 
 
             foreach (Control item in panelContainer.Controls)
             {
+
+                if (item.Name == "confirmStandsModal" || item.Name ==  "ModifierAtelierModal")
+
                 if (item.Name == "standAllocation")
                 {
                     panelContainer.Controls.Remove(item);
@@ -110,7 +141,7 @@ namespace Main
 
             foreach (Control item in panelContainer.Controls)
             {
-                if (item.Name == "m2lStands")
+                if (item.Name == "m2lStands" || item.Name == "m2lAtelier")
                 {
                     panelContainer.Controls.Remove(item);
                     item.Dispose(); // Release all the resources used by the control
@@ -118,11 +149,21 @@ namespace Main
                 }
             }
 
+
             m2lStands ucStands = new m2lStands();
             ucStands.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(ucStands);
 
             panelContainer.Controls["m2lStands"].BringToFront();
+
+            m2lAteliers ucAtelier = new m2lAteliers();
+            ucStands.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(ucStands);
+
+            panelContainer.Controls["m2lAteliers"].BringToFront();
+
+
+
 
             btnReturn.Visible = false;
         }

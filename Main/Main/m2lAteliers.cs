@@ -15,7 +15,8 @@ namespace Main
 {
     public partial class m2lAteliers : UserControl
     {
-        List<Atelier> MesAtelier = DAOAtelier.getallatelier();
+        List<Atelier> MesAtelier = DAOAtelier.getAllAteliers();
+        
 
         public m2lAteliers()
         {
@@ -147,12 +148,30 @@ namespace Main
             Button.Size = new Size(142, 44);
             Button.Activecolor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             Button.BackColor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-
+            Button.Click += new System.EventHandler(bunifuFlatButton1_Click);
             return Button;
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            var btn = sender as BunifuFlatButton;
+            var i = int.Parse(btn.Name.Last().ToString());
+            List<Theme> MesThemes = new List<Theme>();
+
+            string libelle = MesAtelier[i].Libelle.ToString();
+            int capacite = MesAtelier[i].Capacite;
+            DateTime debut = MesAtelier[i].HoraireDebut;
+            DateTime fin = MesAtelier[i].HoraireFin;
+            MesThemes = MesAtelier[i].LesThemes;
+
+            int id = MesAtelier[i].Id;
+
+            ModifierAtelierModal atelierModif = new ModifierAtelierModal(libelle, capacite, debut, fin,id);
+            atelierModif.Dock = DockStyle.Fill;
+            mainForm.Instance.PnlContainer.Controls.Add(atelierModif);
+
+            mainForm.Instance.PnlContainer.Controls["ModifierAtelierModal"].BringToFront();
+            mainForm.Instance.ReturnButton.Visible = true;
 
 
         }

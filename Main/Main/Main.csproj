@@ -123,6 +123,12 @@
     <Compile Include="m2lStands.Designer.cs">
       <DependentUpon>m2lStands.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifierAtelierModal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifierAtelierModal.Designer.cs">
+      <DependentUpon>ModifierAtelierModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="standAllocation.cs">
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="m2lStands.resx">
       <DependentUpon>m2lStands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierAtelierModal.resx">
+      <DependentUpon>ModifierAtelierModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
