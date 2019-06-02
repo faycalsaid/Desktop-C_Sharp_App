@@ -15,7 +15,7 @@ namespace Main
 {
     public partial class m2lAteliers : UserControl
     {
-        List<Atelier> MesAtelier = DAOAtelier.getallatelier();
+        List<Atelier> MesAtelier = DAOAtelier.getAllAteliers();
         
 
         public m2lAteliers()
@@ -166,7 +166,7 @@ namespace Main
 
             int id = MesAtelier[i].Id;
 
-            ModifierAtelierModal atelierModif = new ModifierAtelierModal(libelle, capacite, debut, fin,id,MesThemes);
+            ModifierAtelierModal atelierModif = new ModifierAtelierModal(libelle, capacite, debut, fin,id);
             atelierModif.Dock = DockStyle.Fill;
             mainForm.Instance.PnlContainer.Controls.Add(atelierModif);
 

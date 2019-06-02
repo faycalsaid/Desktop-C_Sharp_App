@@ -10,9 +10,7 @@ namespace Main.LogicLayer
     {
         private int id ;
         private string libelle;
-        private Atelier unAtelier;
-
-        
+   
 
         public int Id
         {

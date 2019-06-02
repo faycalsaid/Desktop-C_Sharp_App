@@ -100,30 +100,17 @@ namespace Main
  
             foreach (Control item in panelContainer.Controls)
             {
-                if (item.Name == "confirmStandsModal")
+                if (item.Name == "confirmStandsModal" || item.Name ==  "ModifierAtelierModal")
                 {
                     panelContainer.Controls.Remove(item);
                     item.Dispose(); // Release all the resources used by the control
-                    break;
-                }
-                else if (item.Name == "ModifierAtelierModal") ;
-                {
-                    panelContainer.Controls.Remove(item);
-                    item.Dispose();
                     break;
                 }
             }
 
             foreach (Control item in panelContainer.Controls)
             {
-                if (item.Name == "m2lStands")
-                {
-                    panelContainer.Controls.Remove(item);
-                    item.Dispose(); // Release all the resources used by the control
-                    break;
-                }
-
-                else if(item.Name == "m2lAtelier")
+                if (item.Name == "m2lStands" || item.Name == "m2lAtelier")
                 {
                     panelContainer.Controls.Remove(item);
                     item.Dispose(); // Release all the resources used by the control

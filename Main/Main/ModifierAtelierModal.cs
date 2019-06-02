@@ -17,18 +17,18 @@ namespace Main
         private int capacite;
         private DateTime debut;
         private DateTime fin;
-        private int id;
+        private int atelierId;
 
-        private List<Theme> MesThemes = new List<Theme>();
+        private List<Theme> ateliersThemes = new List<Theme>();
 
-        public ModifierAtelierModal(string libelle, int capacite, DateTime debut, DateTime fin, int id, List<Theme> MesThemes)
+        public ModifierAtelierModal(string libelle, int capacite, DateTime debut, DateTime fin, int id)
         {
             this.libelle = libelle;
             this.capacite = capacite;
             this.debut = debut;
             this.fin = fin;
-            this.id = id;
-            this.MesThemes = MesThemes;
+            this.atelierId = id;
+            this.ateliersThemes = DAOTheme.getAtelierThemes(id);
 
             InitializeComponent();
             this.iniValue();
@@ -44,7 +44,7 @@ namespace Main
             txbModifCapacite.Text = capacite.ToString();
             dtpDebut .Value = debut;
             dtpFin.Value = fin;
-            dtgThemeModif.DataSource = mesThemes();
+            dtgThemeModif.DataSource = this.ateliersThemes;
 
 
         }
@@ -52,13 +52,13 @@ namespace Main
         public  List<Theme>mesThemes()
         {
             
-                return MesThemes;
+                return ateliersThemes;
             
         }
         public void clear()
         {
-            txbModifCapacite.Text = String.Empty;
-            txbNomModif.Text = String.Empty;
+            txbModifCapacite.ResetText();
+            txbNomModif.ResetText();
         }
 
         private void btnModifValid_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Main
             
             int capactieModif = Convert.ToInt32(txbModifCapacite.Text);
 
-            unAtelier = new Atelier(id, txbNomModif.Text,capactieModif, dtpDebut.Value, dtpFin.Value,MesThemes);
+            unAtelier = new Atelier(atelierId, txbNomModif.Text,capactieModif, dtpDebut.Value, dtpFin.Value);
 
             atelier.modifierAtelier(unAtelier);
           
