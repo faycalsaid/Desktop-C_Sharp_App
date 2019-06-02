@@ -41,6 +41,8 @@ namespace Main
             this.mtrlLabelCit = new MaterialSkin.Controls.MaterialLabel();
             this.mtrlLabelPartner = new MaterialSkin.Controls.MaterialLabel();
             this.mtrlLabelCity = new MaterialSkin.Controls.MaterialLabel();
+            this.unassignBtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // attributeButton
@@ -61,7 +63,7 @@ namespace Main
             this.attributeButton.IdleFillColor = System.Drawing.Color.White;
             this.attributeButton.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.attributeButton.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.attributeButton.Location = new System.Drawing.Point(617, 379);
+            this.attributeButton.Location = new System.Drawing.Point(617, 396);
             this.attributeButton.Margin = new System.Windows.Forms.Padding(5);
             this.attributeButton.Name = "attributeButton";
             this.attributeButton.Size = new System.Drawing.Size(181, 41);
@@ -95,12 +97,12 @@ namespace Main
             // 
             this.mtrlLabelLocalisation.AutoSize = true;
             this.mtrlLabelLocalisation.Depth = 0;
-            this.mtrlLabelLocalisation.Font = new System.Drawing.Font("Roboto", 11F);
-            this.mtrlLabelLocalisation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mtrlLabelLocalisation.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtrlLabelLocalisation.ForeColor = System.Drawing.Color.Crimson;
             this.mtrlLabelLocalisation.Location = new System.Drawing.Point(248, 107);
             this.mtrlLabelLocalisation.MouseState = MaterialSkin.MouseState.HOVER;
             this.mtrlLabelLocalisation.Name = "mtrlLabelLocalisation";
-            this.mtrlLabelLocalisation.Size = new System.Drawing.Size(38, 24);
+            this.mtrlLabelLocalisation.Size = new System.Drawing.Size(42, 23);
             this.mtrlLabelLocalisation.TabIndex = 7;
             this.mtrlLabelLocalisation.Text = "m2";
             // 
@@ -180,12 +182,53 @@ namespace Main
             this.mtrlLabelCity.Size = new System.Drawing.Size(0, 24);
             this.mtrlLabelCity.TabIndex = 13;
             // 
+            // unassignBtn
+            // 
+            this.unassignBtn.ActiveBorderThickness = 1;
+            this.unassignBtn.ActiveCornerRadius = 20;
+            this.unassignBtn.ActiveFillColor = System.Drawing.Color.DarkOrange;
+            this.unassignBtn.ActiveForecolor = System.Drawing.Color.White;
+            this.unassignBtn.ActiveLineColor = System.Drawing.Color.DarkOrange;
+            this.unassignBtn.BackColor = System.Drawing.Color.GhostWhite;
+            this.unassignBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("unassignBtn.BackgroundImage")));
+            this.unassignBtn.ButtonText = "Liberer";
+            this.unassignBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.unassignBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unassignBtn.ForeColor = System.Drawing.Color.SeaGreen;
+            this.unassignBtn.IdleBorderThickness = 1;
+            this.unassignBtn.IdleCornerRadius = 20;
+            this.unassignBtn.IdleFillColor = System.Drawing.Color.White;
+            this.unassignBtn.IdleForecolor = System.Drawing.Color.DarkOrange;
+            this.unassignBtn.IdleLineColor = System.Drawing.Color.DarkOrange;
+            this.unassignBtn.Location = new System.Drawing.Point(617, 448);
+            this.unassignBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.unassignBtn.Name = "unassignBtn";
+            this.unassignBtn.Size = new System.Drawing.Size(181, 41);
+            this.unassignBtn.TabIndex = 14;
+            this.unassignBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unassignBtn.Click += new System.EventHandler(this.UnassignBtn_Click);
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(601, 82);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(97, 24);
+            this.materialLabel1.TabIndex = 15;
+            this.materialLabel1.Text = "Attribuer à";
+            // 
             // standAllocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.GhostWhite;
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.unassignBtn);
             this.Controls.Add(this.mtrlLabelCity);
             this.Controls.Add(this.mtrlLabelPartner);
             this.Controls.Add(this.mtrlLabelCit);
@@ -214,5 +257,7 @@ namespace Main
         private MaterialSkin.Controls.MaterialLabel mtrlLabelCit;
         private MaterialSkin.Controls.MaterialLabel mtrlLabelPartner;
         private MaterialSkin.Controls.MaterialLabel mtrlLabelCity;
+        private Bunifu.Framework.UI.BunifuThinButton2 unassignBtn;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

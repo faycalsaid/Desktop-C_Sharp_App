@@ -57,7 +57,6 @@ namespace Main
                 card.Controls.Add(generatePartnerLabel(i));
 
             }
-            Console.WriteLine("Card Id :" + card.Name.Last().ToString());
             return card;
         }
 
@@ -175,8 +174,9 @@ namespace Main
             string location = standsList[i].NumAllee.ToString() + " " + standsList[i].NumOrdre.ToString();
             string area = standsList[i].Area.ToString() + " M²";
             int id = standsList[i].Id;
+            bool available = standsList[i].Available;
 
-            standAllocation actualModal = new standAllocation(location, area, id);
+            standAllocation actualModal = new standAllocation(location, area, id, available);
             actualModal.Dock = DockStyle.Fill;
             mainForm.Instance.PnlContainer.Controls.Add(actualModal);
 

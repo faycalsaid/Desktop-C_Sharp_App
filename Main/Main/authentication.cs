@@ -13,6 +13,7 @@ namespace Main
 {
     public partial class Authentication : Form
     {
+        static Authentication _obj;
         public Authentication()
         {
             InitializeComponent();
@@ -25,12 +26,31 @@ namespace Main
             {
                 mainForm m = new mainForm();
                 m.Show();
+                this.Hide();
             }
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             login();
+        }
+
+        public static Authentication Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new Authentication();
+                }
+
+                return _obj;
+            }
+        }
+
+        private void ExitAuthBtn_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
         }
     }
 }

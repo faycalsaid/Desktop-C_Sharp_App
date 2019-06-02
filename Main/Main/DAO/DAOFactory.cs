@@ -25,7 +25,6 @@ namespace Main.DAO
 
         public SqlDataReader execSqlRead(string requete)
         {
-            Console.WriteLine("The connexion " + maConnexion);
 
             SqlCommand maCommand = new SqlCommand();
             maCommand.CommandText = requete;

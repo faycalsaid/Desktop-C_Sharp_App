@@ -18,12 +18,14 @@ namespace Main
         private string location;
         private string area;
         private int dbId; //Data base Stand ID;
+        private bool available;
         private List<Partenaire> partners = new List<Partenaire>();
-        public standAllocation(string location, string area, int dbId)
+        public standAllocation(string location, string area, int dbId, bool available)
         {
             this.location = location;
             this.area = area;
             this.dbId = dbId;
+            this.available = available;
 
             this.partners = DAOPartenaires.getAllPartners();
 
@@ -34,9 +36,15 @@ namespace Main
         }
         private void initValues ()
         {
-            initLabels();
             cBoxPartners.DataSource = partners;
             cBoxPartners.DisplayMember = "Nom";
+            initLabels();
+
+            if(available)
+            {
+                Console.WriteLine("Passed");
+                cleanModal();
+            }
 
         }
 
@@ -53,7 +61,6 @@ namespace Main
         private void AttributeButton_Click(object sender, EventArgs e)
         {
             Partenaire p = cBoxPartners.SelectedItem as Partenaire;
-            Console.WriteLine("Slected Item " + p.Id);
             DAOStands.atributePartner(p.Id, dbId);
         }
 
@@ -63,5 +70,19 @@ namespace Main
             mtrlLabelPartner.Text = p.Nom;
             mtrlLabelCity.Text = p.Ville;
         }
+
+        private void UnassignBtn_Click(object sender, EventArgs e)
+        {
+            DAOStands.unassignPartner(dbId);
+            cleanModal();
+        }
+
+        private void cleanModal()
+        {
+            mtrlLabelPartner.ResetText();
+            mtrlLabelCity.ResetText();
+            cBoxPartners.ResetText();
+        }
+
     }
 }
