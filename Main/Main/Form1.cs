@@ -88,6 +88,7 @@ namespace Main
             set { panelContainer = value; }
         }
 
+
         public BunifuImageButton ReturnButton
         {
             get { return btnReturn; }
@@ -103,7 +104,13 @@ namespace Main
                 {
                     panelContainer.Controls.Remove(item);
                     item.Dispose(); // Release all the resources used by the control
-                    break; 
+                    break;
+                }
+                else if (item.Name == "ModifierAtelierModal") ;
+                {
+                    panelContainer.Controls.Remove(item);
+                    item.Dispose();
+                    break;
                 }
             }
 
@@ -115,13 +122,30 @@ namespace Main
                     item.Dispose(); // Release all the resources used by the control
                     break;
                 }
+
+                else if(item.Name == "m2lAtelier")
+                {
+                    panelContainer.Controls.Remove(item);
+                    item.Dispose(); // Release all the resources used by the control
+                    break;
+                }
             }
+
 
             m2lStands ucStands = new m2lStands();
             ucStands.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(ucStands);
 
             panelContainer.Controls["m2lStands"].BringToFront();
+
+            m2lAteliers ucAtelier = new m2lAteliers();
+            ucStands.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(ucStands);
+
+            panelContainer.Controls["m2lAteliers"].BringToFront();
+
+
+
 
             btnReturn.Visible = false;
         }

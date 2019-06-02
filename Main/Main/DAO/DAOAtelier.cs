@@ -12,28 +12,57 @@ namespace Main.DAO
     class DAOAtelier
     {
 
+
         public static List<Atelier> getallatelier()
         {
             List<Atelier> MesAtelier = new List<Atelier>();
+            List<Theme> MesTheme = new List<Theme>();
             DAOFactory fa = new DAOFactory();
+            DAOFactory da = new DAOFactory();
             fa.connexion();
             fa.connecter();
+
+            string requete2;
+            da.connexion();
+            da.connecter();
+
             string requete = (" SELECT * from Atelier ");
             SqlDataReader monDR = fa.execSqlRead(requete);
 
-
             while (monDR.Read())
-            {
-                Atelier monAtelier = new Atelier(Convert.ToInt32(monDR[0]), monDR[1].ToString(), Convert.ToInt32(monDR[2]), Convert.ToDateTime(monDR[3]), Convert.ToDateTime(monDR[4]));
-                MesAtelier.Add(monAtelier);
-            }
+            { 
+
+                requete2 = ("SELECT id_theme,theme_atelier.libelle from theme_atelier inner join Atelier on theme_atelier.id_theme = Atelier.id where id_atelier =" + Convert.ToInt32(monDR.Read()));
 
 
+        }
+            
+
+
+                
+                while (monDR.Read())
+                {
+                    Atelier monAtelier = new Atelier(Convert.ToInt32(monDR[0]), monDR[1].ToString(), Convert.ToInt32(monDR[2]), Convert.ToDateTime(monDR[3]), Convert.ToDateTime(monDR[4]), MesTheme);
+                    MesAtelier.Add(monAtelier);
+
+
+                    
+
+
+                    
+                    
+
+
+
+
+                }
+                
+
+            
             fa.deconnecter();
-
+            da.deconnecter();
             return MesAtelier;
         }
-
 
         public void creerAtelier(Atelier unAtelier)
         {
@@ -54,7 +83,7 @@ namespace Main.DAO
             dao.connexion();
 
             dao.connecter();
-            string requete = "update Atelier set libelle = '" + unAtelier.Libelle + "', set capacite = '" + unAtelier.Capacite + "', set horaireDebut ='" + unAtelier.HoraireDebut + "', set horaireFin = '" + unAtelier.HoraireFin +"' where id = '" + unAtelier.Id + "'";
+            string requete = "update Atelier set libelle = '" + unAtelier.Libelle + "', capacite = '" + unAtelier.Capacite + "', horaireDebut ='" + unAtelier.HoraireDebut + "', horaireFin = '" + unAtelier.HoraireFin +"' where id = '" + unAtelier.Id + "'";
 
             dao.execSqlWrite(requete);
             dao.deconnecter();

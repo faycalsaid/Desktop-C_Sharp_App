@@ -120,14 +120,14 @@ namespace Main.LogicLayer
 
         #region Méthodes publique
         // Méthodes publique
-        public Atelier(int unid, string unlibelle, int unecapacite, DateTime unhoraireDebut, DateTime unhoraireFin)
+        public Atelier(int unid, string unlibelle, int unecapacite, DateTime unhoraireDebut, DateTime unhoraireFin, List<Theme>lesThemes)
         {
             this.id = unid;
             this.libelle = unlibelle;
             this.capacite = unecapacite;
             this.horaireDebut = unhoraireDebut;
             this.horaireFin = unhoraireFin;
-            
+            this.lesThemes = lesThemes;
 
         }
 

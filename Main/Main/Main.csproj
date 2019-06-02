@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>D:\Faycal\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>D:\Users\ABDULLAHI\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -82,7 +82,9 @@
     <Compile Include="m2lAteliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="m2lAteliers.Designer.cs" />
+    <Compile Include="m2lAteliers.Designer.cs">
+      <DependentUpon>m2lAteliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="m2lHotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +103,12 @@
     <Compile Include="m2lStands.Designer.cs">
       <DependentUpon>m2lStands.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifierAtelierModal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifierAtelierModal.Designer.cs">
+      <DependentUpon>ModifierAtelierModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="confirmStandsModal.resx">
@@ -109,12 +117,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="m2lAteliers.resx" />
+    <EmbeddedResource Include="m2lAteliers.resx">
+      <DependentUpon>m2lAteliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="m2lHotel.resx">
       <DependentUpon>m2lHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="m2lStands.resx">
       <DependentUpon>m2lStands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierAtelierModal.resx">
+      <DependentUpon>ModifierAtelierModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
