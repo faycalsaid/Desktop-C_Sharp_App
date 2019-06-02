@@ -60,12 +60,17 @@ namespace Main
         #endregion
 
         #region Event DVG
-        private void dgvParticipants_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void DgvParticipants_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DAOParticipants.editParticipant(Convert.ToInt32(dgvParticipants.CurrentRow.Cells[0].Value),
-                    Convert.ToString(dgvParticipants.CurrentRow.Cells[1].Value),
-                    Convert.ToString(dgvParticipants.CurrentRow.Cells[2].Value),
-                    Convert.ToInt32(dgvParticipants.CurrentRow.Cells[3].Value));
+            if (dgvParticipants.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dgvParticipants.CurrentRow.Selected = true;
+
+                txtBoxNom.Text = dgvParticipants.Rows[e.RowIndex].Cells["FirstNameParticipant"].FormattedValue.ToString();
+                txtBoxPrenom.Text = dgvParticipants.Rows[e.RowIndex].Cells["LastNameParticipant"].FormattedValue.ToString();
+
+                cBoxType.SelectedIndex = Convert.ToInt32(dgvParticipants.Rows[e.RowIndex].Cells["idType"].Value.ToString()) - 1;
+            }
         }
         #endregion
 
@@ -106,7 +111,6 @@ namespace Main
         }
         #endregion
 
-
         #region Init Donnée
         public void initParticipants()
         {
@@ -136,18 +140,16 @@ namespace Main
         }
         #endregion
 
-
-        private void DgvParticipants_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
-            if (dgvParticipants.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                dgvParticipants.CurrentRow.Selected = true;
+            Int32 key = ((KeyValuePair<int, String>)cBoxType.SelectedItem).Key;
 
-                txtBoxNom.Text = dgvParticipants.Rows[e.RowIndex].Cells["FirstNameParticipant"].FormattedValue.ToString();
-                txtBoxPrenom.Text = dgvParticipants.Rows[e.RowIndex].Cells["LastNameParticipant"].FormattedValue.ToString();
-
-                cBoxType.SelectedIndex = Convert.ToInt32(dgvParticipants.Rows[e.RowIndex].Cells["idType"].Value.ToString()) - 1;
-            }
+            DAOParticipants.editParticipant(Convert.ToInt32(dgvParticipants.CurrentRow.Cells[0].Value),
+                    txtBoxNom.Text,
+                    txtBoxPrenom.Text,
+                    key);
+            dgvParticipants.DataSource = null;
+            dgvParticipants.DataSource = DAOParticipants.getAllParticipants();
         }
     }
 }

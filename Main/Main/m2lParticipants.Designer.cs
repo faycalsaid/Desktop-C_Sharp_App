@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.participantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dgvParticipants = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -40,10 +40,12 @@
             this.txtBoxPrenom = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cBoxType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.participantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParticipants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddParticipants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteParticipants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // participantBindingSource
@@ -57,19 +59,19 @@
             // 
             // dgvParticipants
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvParticipants.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvParticipants.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvParticipants.BackgroundColor = System.Drawing.Color.DimGray;
             this.dgvParticipants.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvParticipants.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvParticipants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvParticipants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvParticipants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParticipants.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvParticipants.DoubleBuffered = true;
@@ -83,7 +85,6 @@
             this.dgvParticipants.Size = new System.Drawing.Size(677, 279);
             this.dgvParticipants.TabIndex = 0;
             this.dgvParticipants.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvParticipants_CellClick);
-            this.dgvParticipants.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParticipants_CellEndEdit);
             // 
             // btnAddParticipants
             // 
@@ -174,10 +175,25 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Type participant";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnEdit.Image = global::Main.Properties.Resources.baseline_edit_white_48dp;
+            this.btnEdit.ImageActive = null;
+            this.btnEdit.Location = new System.Drawing.Point(517, 30);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(44, 44);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEdit.TabIndex = 9;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Zoom = 10;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
             // m2lParticipants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cBoxType);
             this.Controls.Add(this.txtBoxPrenom);
@@ -192,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvParticipants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddParticipants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteParticipants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +224,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtBoxNom;
         private System.Windows.Forms.ComboBox cBoxType;
         private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuImageButton btnEdit;
     }
 }

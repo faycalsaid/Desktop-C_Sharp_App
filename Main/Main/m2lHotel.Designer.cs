@@ -38,9 +38,11 @@
             this.cBoxParticipant = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnEditReservation = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddHotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteHotel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditReservation)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvHotel
@@ -69,14 +71,14 @@
             this.dgvHotel.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvHotel.Size = new System.Drawing.Size(677, 286);
             this.dgvHotel.TabIndex = 0;
-            this.dgvHotel.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHotel_CellEndEdit);
+            this.dgvHotel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHotel_CellClick);
             // 
             // btnAddHotel
             // 
             this.btnAddHotel.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAddHotel.Image = global::Main.Properties.Resources.baseline_add_white_48dp;
             this.btnAddHotel.ImageActive = null;
-            this.btnAddHotel.Location = new System.Drawing.Point(507, 23);
+            this.btnAddHotel.Location = new System.Drawing.Point(493, 22);
             this.btnAddHotel.Name = "btnAddHotel";
             this.btnAddHotel.Size = new System.Drawing.Size(44, 44);
             this.btnAddHotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,7 +92,7 @@
             this.btnDeleteHotel.BackColor = System.Drawing.Color.SeaGreen;
             this.btnDeleteHotel.Image = global::Main.Properties.Resources.baseline_delete_white_48dp;
             this.btnDeleteHotel.ImageActive = null;
-            this.btnDeleteHotel.Location = new System.Drawing.Point(576, 23);
+            this.btnDeleteHotel.Location = new System.Drawing.Point(614, 23);
             this.btnDeleteHotel.Name = "btnDeleteHotel";
             this.btnDeleteHotel.Size = new System.Drawing.Size(43, 44);
             this.btnDeleteHotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -155,10 +157,25 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Hotel";
             // 
+            // btnEditReservation
+            // 
+            this.btnEditReservation.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnEditReservation.Image = global::Main.Properties.Resources.baseline_edit_white_48dp;
+            this.btnEditReservation.ImageActive = null;
+            this.btnEditReservation.Location = new System.Drawing.Point(554, 23);
+            this.btnEditReservation.Name = "btnEditReservation";
+            this.btnEditReservation.Size = new System.Drawing.Size(44, 44);
+            this.btnEditReservation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditReservation.TabIndex = 13;
+            this.btnEditReservation.TabStop = false;
+            this.btnEditReservation.Zoom = 10;
+            this.btnEditReservation.Click += new System.EventHandler(this.BtnEditReservation_Click);
+            // 
             // m2lHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEditReservation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cBoxParticipant);
@@ -173,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHotel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddHotel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteHotel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditReservation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +206,6 @@
         private System.Windows.Forms.ComboBox cBoxParticipant;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuImageButton btnEditReservation;
     }
 }

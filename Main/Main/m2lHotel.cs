@@ -55,7 +55,8 @@ namespace Main
         {
             dgvHotel.DataSource = null;
             dgvHotel.DataSource = DAOReservation.getAllReservation();
-
+            dgvHotel.Columns["IdParticipant"].Visible = false;
+            dgvHotel.Columns["IdHotel"].Visible = false;
 
             // on redimensionne automatiquement la largeur des colonnes du datagridview
             dgvHotel.AutoResizeColumns();
@@ -91,12 +92,18 @@ namespace Main
         }
 
         #region Event DVG
-        private void dgvHotel_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void DgvHotel_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DAOReservation.editReservation(Convert.ToInt32(dgvHotel.CurrentRow.Cells[0].Value),
-                    Convert.ToInt32(dgvHotel.CurrentRow.Cells[1].Value),
-                    Convert.ToInt32(dgvHotel.CurrentRow.Cells[2].Value),
-                    Convert.ToInt32(dgvHotel.CurrentRow.Cells[3].Value));
+            if (dgvHotel.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dgvHotel.CurrentRow.Selected = true;
+
+                txtBoxNbJour.Text = dgvHotel.Rows[e.RowIndex].Cells["NbJours"].FormattedValue.ToString();
+
+                cBoxHotel.SelectedIndex = Convert.ToInt32(dgvHotel.Rows[e.RowIndex].Cells["IdParticipant"].Value.ToString()) - 1;
+                cBoxHotel.SelectedIndex = Convert.ToInt32(dgvHotel.Rows[e.RowIndex].Cells["IdHotel"].Value.ToString()) - 1;
+
+            }
         }
         #endregion
 
@@ -120,5 +127,18 @@ namespace Main
 
         #endregion
 
+        private void BtnEditReservation_Click(object sender, EventArgs e)
+        {
+            Int32 idParticipant = ((KeyValuePair<int, String>)cBoxParticipant.SelectedItem).Key;
+            Int32 idHotel = ((KeyValuePair<int, String>)cBoxHotel.SelectedItem).Key;
+
+
+            DAOReservation.editReservation(Convert.ToInt32(dgvHotel.CurrentRow.Cells[0].Value),
+                    idParticipant,
+                    idHotel,
+                    Convert.ToInt32(txtBoxNbJour.Text));
+
+            loadDGV();
+        }
     }
 }

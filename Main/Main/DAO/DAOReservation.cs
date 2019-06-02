@@ -19,16 +19,25 @@ namespace Main.DAO
             DB.connexion();
             DB.connecter();
 
-                String requete = "SELECT id, idParticipant, idHotel, nbJour FROM ReservationHotel;";
+                String requete = "SELECT ReservationHotel.id, idParticipant, idHotel, nbJour, Participant.nom, prenom, Hotel.nom " +
+                "FROM ReservationHotel inner join Participant on idParticipant = Participant.id inner join Hotel on idHotel = Hotel.id;";
 
             SqlDataReader requeteResult = DB.execSqlRead(requete);
 
                 while (requeteResult.Read())
                 {
-                    theReservation.Add(new Reservation(Convert.ToInt32(requeteResult[0]), 
-                        Convert.ToInt32(requeteResult[1]), 
-                        Convert.ToInt32(requeteResult[2]), 
-                        Convert.ToInt32(requeteResult[3])));
+                Reservation uneReservation = new Reservation(Convert.ToInt32(requeteResult[0]),
+                    Convert.ToInt32(requeteResult[1]),
+                    Convert.ToInt32(requeteResult[2]),
+                    Convert.ToInt32(requeteResult[3]));
+
+                    uneReservation.Nom = requeteResult[4].ToString();
+                    uneReservation.Prenom = requeteResult[5].ToString();
+                    uneReservation.NameHotel = requeteResult[6].ToString();
+
+                    theReservation.Add(uneReservation);
+                    
+                    
                 }
                 DB.deconnecter();
 
