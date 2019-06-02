@@ -25,7 +25,6 @@ namespace Main.DAO
 
         public SqlDataReader execSqlRead(string requete)
         {
-            Console.WriteLine("The connexion " + maConnexion);
 
             SqlCommand maCommand = new SqlCommand();
             maCommand.CommandText = requete;
@@ -40,6 +39,13 @@ namespace Main.DAO
 
             return myDReader;
 
+        }
+
+        public SqlDataAdapter singleRowResult(string request)
+        {
+            SqlDataAdapter sda = new SqlDataAdapter(request, maConnexion);
+
+            return sda;
         }
 
         public void execSqlWrite(string requete)

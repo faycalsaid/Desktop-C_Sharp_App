@@ -41,7 +41,6 @@ namespace Main.DAO
             db.connecter();
 
             string req = "INSERT INTO Participant  (nom, prenom, id_Hotel) VALUES ('"+nom+ "', '" + prenom + "', '" + idHotel + "')";
-            Console.WriteLine(req);
 
             db.execSqlWrite(req);
             db.deconnecter();
