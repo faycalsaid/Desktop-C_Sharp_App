@@ -41,7 +41,6 @@ namespace Main.DAO
             db.connecter();
 
             string req = "INSERT INTO Hotel (nom, adresse) VALUES ('" + nom + "', '" + adresse + "')";
-            Console.WriteLine(req);
 
             db.execSqlWrite(req);
             db.deconnecter();

@@ -14,6 +14,34 @@ namespace Main
             InitializeComponent();
         }
 
+        //Return an instance of actual form (Made for Stands)
+        //@Feycce
+        public static mainForm Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new mainForm();
+                }
+
+                return _obj;
+            }
+        }
+
+        public Panel PnlContainer
+        {
+            get { return panelContainer; }
+            set { panelContainer = value; }
+        }
+
+        public BunifuImageButton ReturnButton
+        {
+            get { return btnReturn; }
+            set { btnReturn = value; }
+        }
+
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             btnReturn.Visible = false;
@@ -99,34 +127,14 @@ namespace Main
             btnReturn.Visible = false;
         }
 
-
-        //Return an instance of actual form (Made for Stands)
-        //@Feycce
-        public static mainForm Instance
+        private void LogOutBtn_Click(object sender, EventArgs e)
         {
-            get
-            {
-                if (_obj == null)
-                {
-                    _obj = new mainForm();
-                }
-
-                return _obj;
-            }
+            Authentication.Instance.Show();
+            this.Close();
         }
 
-        public Panel PnlContainer
-        {
-            get { return panelContainer; }
-            set { panelContainer = value; }
-        }
 
-        public BunifuImageButton ReturnButton
-        {
-            get { return btnReturn; }
-            set { btnReturn = value; }
-        }
 
-        
+  
     }
 }

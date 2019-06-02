@@ -36,6 +36,7 @@
             this.pwdTxtBox = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.exitAuthBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -61,10 +62,10 @@
             this.loginBtn.IdleFillColor = System.Drawing.Color.DarkViolet;
             this.loginBtn.IdleForecolor = System.Drawing.Color.White;
             this.loginBtn.IdleLineColor = System.Drawing.Color.DarkViolet;
-            this.loginBtn.Location = new System.Drawing.Point(154, 441);
+            this.loginBtn.Location = new System.Drawing.Point(74, 446);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(5);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(181, 41);
+            this.loginBtn.Size = new System.Drawing.Size(167, 41);
             this.loginBtn.TabIndex = 0;
             this.loginBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.loginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
@@ -95,7 +96,7 @@
             this.pwdTxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pwdTxtBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.pwdTxtBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pwdTxtBox.isPassword = false;
+            this.pwdTxtBox.isPassword = true;
             this.pwdTxtBox.Location = new System.Drawing.Point(62, 278);
             this.pwdTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.pwdTxtBox.Name = "pwdTxtBox";
@@ -123,12 +124,39 @@
             this.bunifuCustomLabel2.TabIndex = 4;
             this.bunifuCustomLabel2.Text = "Mot de passe";
             // 
+            // exitAuthBtn
+            // 
+            this.exitAuthBtn.ActiveBorderThickness = 1;
+            this.exitAuthBtn.ActiveCornerRadius = 20;
+            this.exitAuthBtn.ActiveFillColor = System.Drawing.Color.Purple;
+            this.exitAuthBtn.ActiveForecolor = System.Drawing.Color.DeepPink;
+            this.exitAuthBtn.ActiveLineColor = System.Drawing.Color.DarkMagenta;
+            this.exitAuthBtn.BackColor = System.Drawing.Color.White;
+            this.exitAuthBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exitAuthBtn.BackgroundImage")));
+            this.exitAuthBtn.ButtonText = "Quitter";
+            this.exitAuthBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitAuthBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitAuthBtn.ForeColor = System.Drawing.Color.FloralWhite;
+            this.exitAuthBtn.IdleBorderThickness = 1;
+            this.exitAuthBtn.IdleCornerRadius = 20;
+            this.exitAuthBtn.IdleFillColor = System.Drawing.Color.DarkViolet;
+            this.exitAuthBtn.IdleForecolor = System.Drawing.Color.White;
+            this.exitAuthBtn.IdleLineColor = System.Drawing.Color.DarkViolet;
+            this.exitAuthBtn.Location = new System.Drawing.Point(251, 446);
+            this.exitAuthBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.exitAuthBtn.Name = "exitAuthBtn";
+            this.exitAuthBtn.Size = new System.Drawing.Size(167, 41);
+            this.exitAuthBtn.TabIndex = 5;
+            this.exitAuthBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.exitAuthBtn.Click += new System.EventHandler(this.ExitAuthBtn_Click);
+            // 
             // Authentication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(496, 550);
+            this.Controls.Add(this.exitAuthBtn);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.pwdTxtBox);
@@ -151,5 +179,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuMetroTextbox pwdTxtBox;
         private Bunifu.Framework.UI.BunifuMetroTextbox loginTxtBox;
+        private Bunifu.Framework.UI.BunifuThinButton2 exitAuthBtn;
     }
 }

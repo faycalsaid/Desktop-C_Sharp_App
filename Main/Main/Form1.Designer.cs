@@ -35,17 +35,19 @@
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnReturn = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMinimizeApp = new Bunifu.Framework.UI.BunifuImageButton();
+            this.logOutBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnHotels = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnStands = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnParticipants = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAteliers = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panelContainer = new System.Windows.Forms.Panel();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logOutBtn)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +59,7 @@
             // topPanel
             // 
             this.topPanel.AllowDrop = true;
+            this.topPanel.Controls.Add(this.logOutBtn);
             this.topPanel.Controls.Add(this.btnClose);
             this.topPanel.Controls.Add(this.btnReturn);
             this.topPanel.Controls.Add(this.btnMinimizeApp);
@@ -88,7 +91,7 @@
             this.btnReturn.BackColor = System.Drawing.Color.Transparent;
             this.btnReturn.Image = global::Main.Properties.Resources._return;
             this.btnReturn.ImageActive = null;
-            this.btnReturn.Location = new System.Drawing.Point(239, 0);
+            this.btnReturn.Location = new System.Drawing.Point(234, -1);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(66, 42);
             this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -112,12 +115,34 @@
             this.btnMinimizeApp.Zoom = 10;
             this.btnMinimizeApp.Click += new System.EventHandler(this.btnMinimizeApp_Click);
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logOutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logOutBtn.Image")));
+            this.logOutBtn.ImageActive = null;
+            this.logOutBtn.Location = new System.Drawing.Point(3, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(71, 19);
+            this.logOutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logOutBtn.TabIndex = 6;
+            this.logOutBtn.TabStop = false;
+            this.logOutBtn.Zoom = 10;
+            this.logOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
+            // 
             // bunifuDragControl1
             // 
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(247, 41);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1112, 672);
+            this.panelContainer.TabIndex = 2;
             // 
             // bunifuGradientPanel1
             // 
@@ -287,14 +312,6 @@
             this.btnAteliers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAteliers.Click += new System.EventHandler(this.BtnAteliers_Click);
             // 
-            // panelContainer
-            // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(247, 41);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1112, 672);
-            this.panelContainer.TabIndex = 2;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,6 +330,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logOutBtn)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -333,6 +351,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnAteliers;
         private Bunifu.Framework.UI.BunifuImageButton btnReturn;
         private System.Windows.Forms.Panel panelContainer;
+        private Bunifu.Framework.UI.BunifuImageButton logOutBtn;
     }
 }
 

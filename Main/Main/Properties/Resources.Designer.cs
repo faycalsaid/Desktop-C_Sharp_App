@@ -121,6 +121,26 @@ namespace Main.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        internal static byte[] Bunifu_UI_v1_52 {
+            get {
+                object obj = ResourceManager.GetObject("Bunifu_UI_v1_52", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        internal static byte[] MaterialSkin {
+            get {
+                object obj = ResourceManager.GetObject("MaterialSkin", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap new_24_512 {

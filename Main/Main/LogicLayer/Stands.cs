@@ -30,11 +30,6 @@ namespace Main.LogicLayer
             this.Partenaire = partenaire;
         }
 
-        public void test()
-        {
-            Console.WriteLine("Test");
-        }
-
         public int Id
         {
             get
