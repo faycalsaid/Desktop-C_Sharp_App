@@ -11,7 +11,8 @@ namespace Main.LogicLayer
         private Int32 idParticipant;
         private String firstNameParticipant;
         private String lastNameParticipant;
-        private Int32 idHotel;
+        private Int32 idType;
+        private String libelleType;
 
         public int IdParticipant
         {
@@ -52,25 +53,21 @@ namespace Main.LogicLayer
             }
         }
 
-        public Int32 IdHotel
-        {
-            get
-            {
-                return idHotel;
-            }
+        public int IdType { get => idType; set => idType = value; }
+        public string LibelleType { get => libelleType; set => libelleType = value; }
 
-            set
-            {
-                idHotel = value;
-            }
+        public String ToStringName()
+        {
+            return LastNameParticipant + FirstNameParticipant;
         }
 
-        public Participant(Int32 idParticipant, string firstNameParticipant, string lastNameParticipant, Int32 idHotel)
+        public Participant(Int32 idParticipant, string firstNameParticipant, string lastNameParticipant, Int32 idType, String libelleType)
         {
             this.IdParticipant = idParticipant;
             this.FirstNameParticipant = firstNameParticipant;
             this.LastNameParticipant = lastNameParticipant;
-            this.idHotel = idHotel;
+            this.idType = idType;
+            this.libelleType = libelleType;
         }
     }
 }

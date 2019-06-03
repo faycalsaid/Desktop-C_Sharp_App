@@ -59,6 +59,10 @@
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -92,12 +96,14 @@
     <Compile Include="DAO\DAOHotel.cs" />
     <Compile Include="DAO\DAOPartenaires.cs" />
     <Compile Include="DAO\DAOParticipants.cs" />
+    <Compile Include="DAO\DAOReservation.cs" />
     <Compile Include="DAO\DAOStands.cs" />
     <Compile Include="DAO\DAOTheme.cs" />
     <Compile Include="LogicLayer\Atelier.cs" />
     <Compile Include="LogicLayer\Hotel.cs" />
     <Compile Include="LogicLayer\Partenaire.cs" />
     <Compile Include="LogicLayer\Participant.cs" />
+    <Compile Include="LogicLayer\Reservation.cs" />
     <Compile Include="LogicLayer\Stands.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicLayer\Theme.cs" />
+    <Compile Include="LogicLayer\TypeParticipant.cs" />
     <Compile Include="m2lAteliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="m2lHotel.resx">
       <DependentUpon>m2lHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="m2lParticipants.resx">
+      <DependentUpon>m2lParticipants.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="m2lStands.resx">
       <DependentUpon>m2lStands.cs</DependentUpon>
