@@ -43,6 +43,8 @@ namespace Main
             this.mtrlLabelCity = new MaterialSkin.Controls.MaterialLabel();
             this.unassignBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.btnReturn = new Bunifu.Framework.UI.BunifuImageButton();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             this.SuspendLayout();
             // 
             // attributeButton
@@ -97,12 +99,12 @@ namespace Main
             // 
             this.mtrlLabelLocalisation.AutoSize = true;
             this.mtrlLabelLocalisation.Depth = 0;
-            this.mtrlLabelLocalisation.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtrlLabelLocalisation.ForeColor = System.Drawing.Color.Crimson;
+            this.mtrlLabelLocalisation.Font = new System.Drawing.Font("Roboto", 11F);
+            this.mtrlLabelLocalisation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mtrlLabelLocalisation.Location = new System.Drawing.Point(248, 107);
             this.mtrlLabelLocalisation.MouseState = MaterialSkin.MouseState.HOVER;
             this.mtrlLabelLocalisation.Name = "mtrlLabelLocalisation";
-            this.mtrlLabelLocalisation.Size = new System.Drawing.Size(42, 23);
+            this.mtrlLabelLocalisation.Size = new System.Drawing.Size(38, 24);
             this.mtrlLabelLocalisation.TabIndex = 7;
             this.mtrlLabelLocalisation.Text = "m2";
             // 
@@ -221,12 +223,27 @@ namespace Main
             this.materialLabel1.TabIndex = 15;
             this.materialLabel1.Text = "Attribuer à";
             // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.Image = global::Main.Properties.Resources._return;
+            this.btnReturn.ImageActive = null;
+            this.btnReturn.Location = new System.Drawing.Point(0, 0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(66, 42);
+            this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnReturn.TabIndex = 16;
+            this.btnReturn.TabStop = false;
+            this.btnReturn.Zoom = 10;
+            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
+            // 
             // standAllocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.GhostWhite;
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.unassignBtn);
             this.Controls.Add(this.mtrlLabelCity);
@@ -241,6 +258,7 @@ namespace Main
             this.Controls.Add(this.attributeButton);
             this.Name = "standAllocation";
             this.Size = new System.Drawing.Size(842, 548);
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +277,6 @@ namespace Main
         private MaterialSkin.Controls.MaterialLabel mtrlLabelCity;
         private Bunifu.Framework.UI.BunifuThinButton2 unassignBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private Bunifu.Framework.UI.BunifuImageButton btnReturn;
     }
 }

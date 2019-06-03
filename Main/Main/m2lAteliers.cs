@@ -189,9 +189,6 @@ namespace Main
             mainForm.Instance.PnlContainer.Controls.Add(atelierModif);
 
             mainForm.Instance.PnlContainer.Controls["ModifierAtelierModal"].BringToFront();
-            mainForm.Instance.ReturnButton.Visible = true;
-
-
         }
 
         private void bunifubtnAjouter_Click(object sender, EventArgs e)
@@ -204,7 +201,6 @@ namespace Main
                 mainForm.Instance.PnlContainer.Controls.Add(atelierAjout);
 
                 mainForm.Instance.PnlContainer.Controls["AjouterAtelier"].BringToFront();
-                mainForm.Instance.ReturnButton.Visible = true;
             
         }
 

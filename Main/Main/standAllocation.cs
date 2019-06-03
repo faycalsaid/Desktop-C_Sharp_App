@@ -84,5 +84,35 @@ namespace Main
             cBoxPartners.ResetText();
         }
 
+        private void BtnReturn_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in mainForm.Instance.PnlContainer.Controls)
+            {
+
+                if (item.Name == "confirmStandsModal")
+                {
+                    mainForm.Instance.PnlContainer.Controls.Remove(item);
+                    item.Dispose(); // Release all the resources used by the control
+                    break;
+                }
+            }
+
+            foreach (Control item in mainForm.Instance.PnlContainer.Controls)
+            {
+                if (item.Name == "m2lStands")
+                {
+                    mainForm.Instance.PnlContainer.Controls.Remove(item);
+                    item.Dispose(); // Release all the resources used by the control
+                    break;
+                }
+            }
+
+
+            m2lStands ucStands = new m2lStands();
+            ucStands.Dock = DockStyle.Fill;
+            mainForm.Instance.PnlContainer.Controls.Add(ucStands);
+
+            mainForm.Instance.PnlContainer.Controls["m2lStands"].BringToFront();
+        }
     }
 }

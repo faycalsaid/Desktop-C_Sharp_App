@@ -97,5 +97,35 @@ namespace Main
 
 
         }
+
+        private void BtnReturnAt_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in mainForm.Instance.PnlContainer.Controls)
+            {
+
+                if (item.Name == "ModifierAtelierModal")
+                {
+                    mainForm.Instance.PnlContainer.Controls.Remove(item);
+                    item.Dispose(); // Release all the resources used by the control
+                    break;
+                }
+            }
+
+            foreach (Control item in mainForm.Instance.PnlContainer.Controls)
+            {
+                if (item.Name == "m2lAteliers")
+                {
+                    mainForm.Instance.PnlContainer.Controls.Remove(item);
+                    item.Dispose(); // Release all the resources used by the control
+                    break;
+                }
+            }
+
+            m2lAteliers ucAtelier = new m2lAteliers();
+            ucAtelier.Dock = DockStyle.Fill;
+            mainForm.Instance.PnlContainer.Controls.Add(ucAtelier);
+
+            mainForm.Instance.PnlContainer.Controls["m2lAteliers"].BringToFront();
+        }
     }
 }

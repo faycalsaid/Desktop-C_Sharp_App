@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace Main
 {
@@ -17,6 +18,8 @@ namespace Main
         public Authentication()
         {
             InitializeComponent();
+
+ 
 
         }
 
@@ -48,7 +51,19 @@ namespace Main
             }
         }
 
-        private void ExitAuthBtn_Click(object sender, EventArgs e)
+        
+
+
+        public void EnterClicked(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+            login();
+            e.Handled = true;
+            }
+        }
+
+private void ExitAuthBtn_Click(object sender, EventArgs e)
         {
             Environment.Exit(1);
         }
