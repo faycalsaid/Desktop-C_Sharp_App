@@ -180,11 +180,7 @@ namespace Main
             actualModal.Dock = DockStyle.Fill;
             mainForm.Instance.PnlContainer.Controls.Add(actualModal);
 
-            mainForm.Instance.PnlContainer.Controls["standAllocation"].BringToFront();
-            mainForm.Instance.ReturnButton.Visible = true;
-
-
-           
+            mainForm.Instance.PnlContainer.Controls["standAllocation"].BringToFront();           
         }
 
     }

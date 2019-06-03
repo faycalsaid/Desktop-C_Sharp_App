@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(m2lAteliers));
             this.bunifuFormFadeTransition1 = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -48,11 +47,13 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.bunifubtnAjouter = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifubtnAjouter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuFormFadeTransition1
@@ -82,38 +83,12 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.bunifuImageButton2);
+            this.panel4.Controls.Add(this.bunifubtnAjouter);
             this.panel4.Controls.Add(this.bunifuImageButton1);
             this.panel4.Location = new System.Drawing.Point(3, 41);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(743, 44);
             this.panel4.TabIndex = 4;
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.Cyan;
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(635, 0);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(56, 44);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 6;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.SlateGray;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(691, 0);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(50, 44);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 5;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
             // 
             // bunifuCards1
             // 
@@ -210,6 +185,7 @@
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -333,6 +309,35 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(8, 8);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
+            // bunifubtnAjouter
+            // 
+            this.bunifubtnAjouter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifubtnAjouter.BackColor = System.Drawing.Color.Cyan;
+            this.bunifubtnAjouter.Image = ((System.Drawing.Image)(resources.GetObject("bunifubtnAjouter.Image")));
+            this.bunifubtnAjouter.ImageActive = null;
+            this.bunifubtnAjouter.Location = new System.Drawing.Point(635, 0);
+            this.bunifubtnAjouter.Name = "bunifubtnAjouter";
+            this.bunifubtnAjouter.Size = new System.Drawing.Size(56, 44);
+            this.bunifubtnAjouter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifubtnAjouter.TabIndex = 6;
+            this.bunifubtnAjouter.TabStop = false;
+            this.bunifubtnAjouter.Zoom = 10;
+            this.bunifubtnAjouter.Click += new System.EventHandler(this.bunifubtnAjouter_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.SlateGray;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(691, 0);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(50, 44);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 5;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
             // m2lAteliers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -342,11 +347,11 @@
             this.Name = "m2lAteliers";
             this.Size = new System.Drawing.Size(755, 549);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifubtnAjouter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,7 +361,7 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Panel panel4;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuImageButton bunifubtnAjouter;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

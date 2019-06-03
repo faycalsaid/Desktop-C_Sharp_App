@@ -32,10 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.topPanel = new System.Windows.Forms.Panel();
-            this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnReturn = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMinimizeApp = new Bunifu.Framework.UI.BunifuImageButton();
             this.logOutBtn = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMinimizeApp = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelContainer = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -44,10 +43,9 @@
             this.btnParticipants = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAteliers = new Bunifu.Framework.UI.BunifuFlatButton();
             this.topPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOutBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +59,6 @@
             this.topPanel.AllowDrop = true;
             this.topPanel.Controls.Add(this.logOutBtn);
             this.topPanel.Controls.Add(this.btnClose);
-            this.topPanel.Controls.Add(this.btnReturn);
             this.topPanel.Controls.Add(this.btnMinimizeApp);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
@@ -70,6 +67,20 @@
             this.topPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.topPanel.Size = new System.Drawing.Size(1359, 41);
             this.topPanel.TabIndex = 1;
+            // 
+            // logOutBtn
+            // 
+            this.logOutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logOutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logOutBtn.Image")));
+            this.logOutBtn.ImageActive = null;
+            this.logOutBtn.Location = new System.Drawing.Point(3, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(71, 19);
+            this.logOutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logOutBtn.TabIndex = 6;
+            this.logOutBtn.TabStop = false;
+            this.logOutBtn.Zoom = 10;
+            this.logOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
             // btnClose
             // 
@@ -86,20 +97,6 @@
             this.btnClose.Zoom = 10;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnReturn
-            // 
-            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
-            this.btnReturn.Image = global::Main.Properties.Resources._return;
-            this.btnReturn.ImageActive = null;
-            this.btnReturn.Location = new System.Drawing.Point(234, -1);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(66, 42);
-            this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnReturn.TabIndex = 5;
-            this.btnReturn.TabStop = false;
-            this.btnReturn.Zoom = 10;
-            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
-            // 
             // btnMinimizeApp
             // 
             this.btnMinimizeApp.BackColor = System.Drawing.Color.Transparent;
@@ -114,20 +111,6 @@
             this.btnMinimizeApp.TabStop = false;
             this.btnMinimizeApp.Zoom = 10;
             this.btnMinimizeApp.Click += new System.EventHandler(this.btnMinimizeApp_Click);
-            // 
-            // logOutBtn
-            // 
-            this.logOutBtn.BackColor = System.Drawing.Color.Transparent;
-            this.logOutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logOutBtn.Image")));
-            this.logOutBtn.ImageActive = null;
-            this.logOutBtn.Location = new System.Drawing.Point(3, 12);
-            this.logOutBtn.Name = "logOutBtn";
-            this.logOutBtn.Size = new System.Drawing.Size(71, 19);
-            this.logOutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logOutBtn.TabIndex = 6;
-            this.logOutBtn.TabStop = false;
-            this.logOutBtn.Zoom = 10;
-            this.logOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
             // bunifuDragControl1
             // 
@@ -327,10 +310,9 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.topPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOutBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizeApp)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -349,7 +331,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnStands;
         private Bunifu.Framework.UI.BunifuFlatButton btnParticipants;
         private Bunifu.Framework.UI.BunifuFlatButton btnAteliers;
-        private Bunifu.Framework.UI.BunifuImageButton btnReturn;
         private System.Windows.Forms.Panel panelContainer;
         private Bunifu.Framework.UI.BunifuImageButton logOutBtn;
     }

@@ -46,9 +46,11 @@ namespace Main
             card.Controls.Add(addCapaciteValueLabel(i));
             card.Controls.Add(addDateDebut(i));
             card.Controls.Add(addDateFin(i));
-            card.Controls.Add(addButtonAjouter(i));
+            card.Controls.Add(addButtonModifier(i));
             card.Controls.Add(addSeparator(i));
-           
+            card.Controls.Add(addButtonSupprimer(i));
+
+
             return card;
         }
 
@@ -137,18 +139,34 @@ namespace Main
             return date;
         }
 
-        private BunifuFlatButton addButtonAjouter(int i)
+        private BunifuFlatButton addButtonModifier(int i)
         {
             BunifuFlatButton Button = new BunifuFlatButton();
             Button.Name = "buFlatButton_" + i.ToString();
-            Button.ButtonText = "Ajouter";
-            Button.Text = "Ajouter";
+            Button.ButtonText = "Modifier";
+            Button.Text = "Modifier";
             Button.TextAlign =ContentAlignment.MiddleLeft;
             Button.Location = new Point(49, 157);
             Button.Size = new Size(142, 44);
             Button.Activecolor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             Button.BackColor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             Button.Click += new System.EventHandler(bunifuFlatButton1_Click);
+            return Button;
+        }
+
+
+        private BunifuFlatButton addButtonSupprimer(int i)
+        {
+            BunifuFlatButton Button = new BunifuFlatButton();
+            Button.Name = "buFlatButton_supp_" + i.ToString();
+            Button.ButtonText = "Supprmier";
+            Button.Text = "Supprimer";
+            Button.TextAlign = ContentAlignment.MiddleLeft;
+            Button.Location = new Point(209, 157);
+            Button.Size = new Size(142, 44);
+            Button.Activecolor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            Button.BackColor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            Button.Click += new System.EventHandler(bunifuFlatButton2_Click);
             return Button;
         }
 
@@ -171,9 +189,53 @@ namespace Main
             mainForm.Instance.PnlContainer.Controls.Add(atelierModif);
 
             mainForm.Instance.PnlContainer.Controls["ModifierAtelierModal"].BringToFront();
-            mainForm.Instance.ReturnButton.Visible = true;
+        }
 
+        private void bunifubtnAjouter_Click(object sender, EventArgs e)
+        {
+            
+            
+
+                AjouterAtelier atelierAjout = new AjouterAtelier();
+                atelierAjout.Dock = DockStyle.Fill;
+                mainForm.Instance.PnlContainer.Controls.Add(atelierAjout);
+
+                mainForm.Instance.PnlContainer.Controls["AjouterAtelier"].BringToFront();
+            
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            DAOAtelier suppr = new DAOAtelier();
+
+            var btn = sender as BunifuFlatButton;
+            var i = int.Parse(btn.Name.Last().ToString());
+
+            Console.WriteLine(Parent.Name);
+            
+
+
+            int id = MesAtelier[i].Id;
+
+
+
+
+            suppr.supprimerAtelier(id);
+
+            Form a = new Form();
+
+            foreach (Control item in flowLayoutPanel5.Controls)
+            {
+
+                if (item.Name == "i")
+                {
+                    flowLayoutPanel5.Controls.Remove(item);
+                    break; //important step
+                }
+            }
 
         }
     }
 }
+    
+
