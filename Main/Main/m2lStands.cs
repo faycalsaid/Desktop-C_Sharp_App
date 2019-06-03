@@ -12,8 +12,6 @@ namespace Main
     public partial class m2lStands : UserControl
     {
         private List<Stands> standsList = DAOStands.getAllStands();
-        private List<Partenaire> partnersList = DAOPartenaires.getAllPartners();
-        private string[] partnersNouns = DAOPartenaires.partnersNouns().ToArray();
         public m2lStands()
         {
             InitializeComponent();
@@ -46,12 +44,12 @@ namespace Main
             card.Controls.Add(generateLocationLabel(i));
             card.Controls.Add(generatAreaValueLabel(i));
             card.Controls.Add(generateLocationValueLabel(i));
+            card.Click += new EventHandler(this.generateStandAffectModal);
 
             if (standsList[i].Available)
             {
                 card.Controls.Add(generateAvailabilityIcon(i));
-                card.Controls.Add(generatetAributeStandBtn(i));
-                //card.Controls.Add(generatePartnersList(i));
+                //card.Controls.Add(generatetAributeStandBtn(i));
             }
             else
             {
@@ -59,7 +57,6 @@ namespace Main
                 card.Controls.Add(generatePartnerLabel(i));
 
             }
-            Console.WriteLine("Card Id :" + card.Name.Last().ToString());
             return card;
         }
 
@@ -157,49 +154,33 @@ namespace Main
             return label;
         }
 
-
-        //private BunifuDropdown generatePartnersList(int i)
+        //private BunifuThinButton2 generatetAributeStandBtn(int i)
         //{
-        //    BunifuDropdown dropDown = new BunifuDropdown();
-        //    dropDown.Name = "bDropdown_Partners_" + i.ToString();
-        //    dropDown.Items = partnersNouns;
-        //    dropDown.Location = new Point(23, 96);
-        //    dropDown.Size = new Size(101, 42);
-        //    dropDown.AutoSize = true;
-
-        //    return dropDown;
+        //    BunifuThinButton2 button = new BunifuThinButton2();
+        //    button.Name = "attributeBtn_" + i.ToString();
+        //    button.Click += new EventHandler(this.generateStandAffectModal);
+        //    button.Size = new Size(114, 39);
+        //    button.Location = new Point(18, 72);
+        //    return button;
         //}
-
-        private BunifuThinButton2 generatetAributeStandBtn(int i)
-        {
-            BunifuThinButton2 button = new BunifuThinButton2();
-            button.Name = "attributeBtn_" + i.ToString();
-            button.Click += new EventHandler(this.generateStandAffectModal);
-            button.Size = new Size(114, 39);
-            button.Location = new Point(18, 72);
-            return button;
-        }
 
 
         private void generateStandAffectModal(object sender, System.EventArgs e)
         {
           
-            var btn = sender as BunifuThinButton2;
-            var i = int.Parse(btn.Name.Last().ToString());
+            var card = sender as BunifuCards;
+            var i = int.Parse(card.Name.Last().ToString());
 
             string location = standsList[i].NumAllee.ToString() + " " + standsList[i].NumOrdre.ToString();
             string area = standsList[i].Area.ToString() + " M²";
             int id = standsList[i].Id;
+            bool available = standsList[i].Available;
 
-            confirmStandsModal actualModal = new confirmStandsModal(location, area, id);
+            standAllocation actualModal = new standAllocation(location, area, id, available);
             actualModal.Dock = DockStyle.Fill;
             mainForm.Instance.PnlContainer.Controls.Add(actualModal);
 
-            mainForm.Instance.PnlContainer.Controls["confirmStandsModal"].BringToFront();
-            mainForm.Instance.ReturnButton.Visible = true;
-
-
-           
+            mainForm.Instance.PnlContainer.Controls["standAllocation"].BringToFront();           
         }
 
     }

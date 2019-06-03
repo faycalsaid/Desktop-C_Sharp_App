@@ -117,38 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="availableBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\availableBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="exitAuthBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKcAAAApCAYAAABQrDlEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI6SURBVHhe7ZxPS1RRGIddJBhJRdimRdC+RctWgaugndDX
+        EII+QIs+QmY6KmoLC4QKXdguCKFo2Th/mBjNiKYWWUmikvTW79zroM7RRY1z3sXzwLOaM3c2D/fec+ee
+        02UATiFOcAtxgluIE9xCnOAW4gS3HBnnzuZvqz36bvM33tvjK+9soq9iQ11FxH9WDamlZ/3LVplcs61v
+        O3ltrRwa5+rCuo2fK1vhdCn6I4j/a6G3bGNny1YqfM2r209LnCp5YWA1fCl2QMR2O3ambLNX67bR+JVX
+        mLEvToU5dbFqw93xgyAen29t+m976yvbeY0H4tQZkzAxpbof3aUZp+4xuZRjakdPlez1nc+hyRCnZuWa
+        /MQGI3ZatbhW2cri1JReM6fYQMROe/9E0RZvNbI49cwpNggxlQ8vVbM4Jy9UowMQU6mzZ4hz5CQP2tGf
+        Ic7YB4ipJU50K3GiW4kT3Uqc6FbiRLcSJ7qVONGtIU49jY99iJjSECdrg9CjIU69Iq83kWMDEFOo9z1C
+        nG/ufrGRHv5fRz8+v/khi1PrNngLHr2oBW/1pz+yOMXi7YaN9nL2xLQOdy/Z3PWV0GQzTi3VmLlcs3uR
+        LyB2yonzleZGC804hdZtjPdxecc0au3Qxxc/8xoPxCkarzbC2vUHPUvRAyC2Wy1H1xlzb5iiJU6hS/zL
+        wU9MkvDY1XZHT64tR/dMisa5i0rWlJ79krDdammQNojTRnGHcWScACkhTnALcYJbiBPcQpzgFLM/6S9d
+        df7KbEEAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="baseline_add_white_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\baseline_add_white_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="baseline_delete_white_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\baseline_delete_white_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="baseline_edit_black_18dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\baseline_edit_black_18dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="baseline_edit_white_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\baseline_edit_white_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="new_24_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new-24-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="notAvailable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notAvailable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="standsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\food-stall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_return" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\return.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bunifu_UI_v1_52" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bunifu_UI_v1.52.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MaterialSkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MaterialSkin.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="loginBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKcAAAApCAYAAABQrDlEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI6SURBVHhe7ZxPS1RRGIddJBhJRdimRdC+RctWgaugndDX
+        EII+QIs+QmY6KmoLC4QKXdguCKFo2Th/mBjNiKYWWUmikvTW79zroM7RRY1z3sXzwLOaM3c2D/fec+ee
+        02UATiFOcAtxgluIE9xCnOAW4gS3HBnnzuZvqz36bvM33tvjK+9soq9iQ11FxH9WDamlZ/3LVplcs61v
+        O3ltrRwa5+rCuo2fK1vhdCn6I4j/a6G3bGNny1YqfM2r209LnCp5YWA1fCl2QMR2O3ambLNX67bR+JVX
+        mLEvToU5dbFqw93xgyAen29t+m976yvbeY0H4tQZkzAxpbof3aUZp+4xuZRjakdPlez1nc+hyRCnZuWa
+        /MQGI3ZatbhW2cri1JReM6fYQMROe/9E0RZvNbI49cwpNggxlQ8vVbM4Jy9UowMQU6mzZ4hz5CQP2tGf
+        Ic7YB4ipJU50K3GiW4kT3Uqc6FbiRLcSJ7qVONGtIU49jY99iJjSECdrg9CjIU69Iq83kWMDEFOo9z1C
+        nG/ufrGRHv5fRz8+v/khi1PrNngLHr2oBW/1pz+yOMXi7YaN9nL2xLQOdy/Z3PWV0GQzTi3VmLlcs3uR
+        LyB2yonzleZGC804hdZtjPdxecc0au3Qxxc/8xoPxCkarzbC2vUHPUvRAyC2Wy1H1xlzb5iiJU6hS/zL
+        wU9MkvDY1XZHT64tR/dMisa5i0rWlJ79krDdammQNojTRnGHcWScACkhTnALcYJbiBPcQpzgFLM/6S9d
+        df7KbEEAAAAASUVORK5CYII=
+</value>
   </data>
 </root>

@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Main.LogicLayer
 {
-    class Theme
+    public class Theme
     {
         private int id ;
         private string libelle;
-
-        
+   
 
         public int Id
         {
@@ -46,6 +45,7 @@ namespace Main.LogicLayer
         {
             Id = unid;
             Libelle = unlibelle;
+            
 
         }
     }

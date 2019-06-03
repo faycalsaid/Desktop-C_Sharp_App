@@ -63,8 +63,7 @@ namespace Main.DAO
             db.connexion();
             db.connecter();
 
-            string req = "INSERT INTO Participant  (nom, prenom, idType) VALUES ('"+nom+ "', '" + prenom + "', '" + idType + "')";
-            Console.WriteLine(req);
+            string req = "INSERT INTO Participant  (nom, prenom, id_Hotel) VALUES ('"+nom+ "', '" + prenom + "', '" + idHotel + "')";
 
             db.execSqlWrite(req);
             db.deconnecter();

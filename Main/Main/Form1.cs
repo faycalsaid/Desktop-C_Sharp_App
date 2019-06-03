@@ -14,9 +14,29 @@ namespace Main
             InitializeComponent();
         }
 
+        //Return an instance of actual form (Made for Stands)
+        //@Feycce
+        public static mainForm Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new mainForm();
+                }
+
+                return _obj;
+            }
+        }
+
+        public Panel PnlContainer
+        {
+            get { return panelContainer; }
+            set { panelContainer = value; }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-            btnReturn.Visible = false;
             _obj = this;
 
             m2lStands ucStands = new m2lStands();
@@ -67,63 +87,14 @@ namespace Main
         }
 
 
-        //Return an instance of actual form (Made for Stands)
-        //@Feycce
-        public static mainForm Instance
+        private void LogOutBtn_Click(object sender, EventArgs e)
         {
-            get
-            {
-                if (_obj == null)
-                {
-                    _obj = new mainForm();
-                }
-
-                return _obj;
-            }
+            Authentication.Instance.Show();
+            this.Close();
         }
 
-        public Panel PnlContainer
-        {
-            get { return panelContainer; }
-            set { panelContainer = value; }
-        }
 
-        public BunifuImageButton ReturnButton
-        {
-            get { return btnReturn; }
-            set { btnReturn = value; }
-        }
 
-        private void BtnReturn_Click(object sender, EventArgs e)
-        {
- 
-            foreach (Control item in panelContainer.Controls)
-            {
-                if (item.Name == "confirmStandsModal")
-                {
-                    panelContainer.Controls.Remove(item);
-                    item.Dispose(); // Release all the resources used by the control
-                    break; 
-                }
-            }
-
-            foreach (Control item in panelContainer.Controls)
-            {
-                if (item.Name == "m2lStands")
-                {
-                    panelContainer.Controls.Remove(item);
-                    item.Dispose(); // Release all the resources used by the control
-                    break;
-                }
-            }
-
-            m2lStands ucStands = new m2lStands();
-            ucStands.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(ucStands);
-
-            panelContainer.Controls["m2lStands"].BringToFront();
-
-            btnReturn.Visible = false;
-        }
+  
     }
 }
