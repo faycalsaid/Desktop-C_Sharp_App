@@ -31,13 +31,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvHotel = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.txtBoxNameHotel = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtBoxAddress = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnAddHotel = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnDeleteHotel = new Bunifu.Framework.UI.BunifuImageButton();
+            this.cBoxHotel = new System.Windows.Forms.ComboBox();
+            this.txtBoxNbJour = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.cBoxParticipant = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnEditReservation = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddHotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteHotel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditReservation)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvHotel
@@ -50,7 +55,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -60,64 +65,20 @@
             this.dgvHotel.DoubleBuffered = true;
             this.dgvHotel.EnableHeadersVisualStyles = false;
             this.dgvHotel.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dgvHotel.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.dgvHotel.HeaderForeColor = System.Drawing.Color.White;
             this.dgvHotel.Location = new System.Drawing.Point(0, 134);
             this.dgvHotel.Name = "dgvHotel";
             this.dgvHotel.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvHotel.Size = new System.Drawing.Size(677, 286);
             this.dgvHotel.TabIndex = 0;
-            this.dgvHotel.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHotel_CellEndEdit);
-            // 
-            // txtBoxNameHotel
-            // 
-            this.txtBoxNameHotel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBoxNameHotel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtBoxNameHotel.ForeColor = System.Drawing.Color.Silver;
-            this.txtBoxNameHotel.HintForeColor = System.Drawing.Color.Empty;
-            this.txtBoxNameHotel.HintText = "";
-            this.txtBoxNameHotel.isPassword = false;
-            this.txtBoxNameHotel.LineFocusedColor = System.Drawing.Color.Black;
-            this.txtBoxNameHotel.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtBoxNameHotel.LineMouseHoverColor = System.Drawing.Color.Black;
-            this.txtBoxNameHotel.LineThickness = 3;
-            this.txtBoxNameHotel.Location = new System.Drawing.Point(53, 33);
-            this.txtBoxNameHotel.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxNameHotel.Name = "txtBoxNameHotel";
-            this.txtBoxNameHotel.Size = new System.Drawing.Size(200, 27);
-            this.txtBoxNameHotel.TabIndex = 1;
-            this.txtBoxNameHotel.Text = "Nom Hotel";
-            this.txtBoxNameHotel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtBoxNameHotel.Enter += new System.EventHandler(this.txtBoxNameHotel_Enter);
-            this.txtBoxNameHotel.Leave += new System.EventHandler(this.txtBoxNameHotel_Leave);
-            // 
-            // txtBoxAddress
-            // 
-            this.txtBoxAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBoxAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtBoxAddress.ForeColor = System.Drawing.Color.Silver;
-            this.txtBoxAddress.HintForeColor = System.Drawing.Color.Empty;
-            this.txtBoxAddress.HintText = "";
-            this.txtBoxAddress.isPassword = false;
-            this.txtBoxAddress.LineFocusedColor = System.Drawing.Color.Black;
-            this.txtBoxAddress.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtBoxAddress.LineMouseHoverColor = System.Drawing.Color.Black;
-            this.txtBoxAddress.LineThickness = 3;
-            this.txtBoxAddress.Location = new System.Drawing.Point(277, 33);
-            this.txtBoxAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxAddress.Name = "txtBoxAddress";
-            this.txtBoxAddress.Size = new System.Drawing.Size(206, 27);
-            this.txtBoxAddress.TabIndex = 2;
-            this.txtBoxAddress.Text = "Adresse Hotel";
-            this.txtBoxAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtBoxAddress.Enter += new System.EventHandler(this.txtBoxAddress_Enter);
-            this.txtBoxAddress.Leave += new System.EventHandler(this.txtBoxAddress_Leave);
+            this.dgvHotel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHotel_CellClick);
             // 
             // btnAddHotel
             // 
             this.btnAddHotel.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAddHotel.Image = global::Main.Properties.Resources.baseline_add_white_48dp;
             this.btnAddHotel.ImageActive = null;
-            this.btnAddHotel.Location = new System.Drawing.Point(553, 84);
+            this.btnAddHotel.Location = new System.Drawing.Point(493, 22);
             this.btnAddHotel.Name = "btnAddHotel";
             this.btnAddHotel.Size = new System.Drawing.Size(44, 44);
             this.btnAddHotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +92,7 @@
             this.btnDeleteHotel.BackColor = System.Drawing.Color.SeaGreen;
             this.btnDeleteHotel.Image = global::Main.Properties.Resources.baseline_delete_white_48dp;
             this.btnDeleteHotel.ImageActive = null;
-            this.btnDeleteHotel.Location = new System.Drawing.Point(622, 84);
+            this.btnDeleteHotel.Location = new System.Drawing.Point(614, 23);
             this.btnDeleteHotel.Name = "btnDeleteHotel";
             this.btnDeleteHotel.Size = new System.Drawing.Size(43, 44);
             this.btnDeleteHotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,14 +101,88 @@
             this.btnDeleteHotel.Zoom = 10;
             this.btnDeleteHotel.Click += new System.EventHandler(this.btnDeleteHotel_Click);
             // 
+            // cBoxHotel
+            // 
+            this.cBoxHotel.FormattingEnabled = true;
+            this.cBoxHotel.Location = new System.Drawing.Point(337, 39);
+            this.cBoxHotel.Name = "cBoxHotel";
+            this.cBoxHotel.Size = new System.Drawing.Size(134, 21);
+            this.cBoxHotel.TabIndex = 8;
+            // 
+            // txtBoxNbJour
+            // 
+            this.txtBoxNbJour.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBoxNbJour.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtBoxNbJour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBoxNbJour.HintForeColor = System.Drawing.Color.Empty;
+            this.txtBoxNbJour.HintText = "";
+            this.txtBoxNbJour.isPassword = false;
+            this.txtBoxNbJour.LineFocusedColor = System.Drawing.Color.Black;
+            this.txtBoxNbJour.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtBoxNbJour.LineMouseHoverColor = System.Drawing.Color.Black;
+            this.txtBoxNbJour.LineThickness = 3;
+            this.txtBoxNbJour.Location = new System.Drawing.Point(61, 84);
+            this.txtBoxNbJour.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxNbJour.Name = "txtBoxNbJour";
+            this.txtBoxNbJour.Size = new System.Drawing.Size(215, 24);
+            this.txtBoxNbJour.TabIndex = 9;
+            this.txtBoxNbJour.Text = "Nombre de jours réservation";
+            this.txtBoxNbJour.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBoxNbJour.Enter += new System.EventHandler(this.TxtBoxNbJour_Enter);
+            this.txtBoxNbJour.Leave += new System.EventHandler(this.TxtBoxNbJour_Leave);
+            // 
+            // cBoxParticipant
+            // 
+            this.cBoxParticipant.FormattingEnabled = true;
+            this.cBoxParticipant.Location = new System.Drawing.Point(61, 39);
+            this.cBoxParticipant.Name = "cBoxParticipant";
+            this.cBoxParticipant.Size = new System.Drawing.Size(215, 21);
+            this.cBoxParticipant.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(58, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Participant";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(337, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Hotel";
+            // 
+            // btnEditReservation
+            // 
+            this.btnEditReservation.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnEditReservation.Image = global::Main.Properties.Resources.baseline_edit_white_48dp;
+            this.btnEditReservation.ImageActive = null;
+            this.btnEditReservation.Location = new System.Drawing.Point(554, 23);
+            this.btnEditReservation.Name = "btnEditReservation";
+            this.btnEditReservation.Size = new System.Drawing.Size(44, 44);
+            this.btnEditReservation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditReservation.TabIndex = 13;
+            this.btnEditReservation.TabStop = false;
+            this.btnEditReservation.Zoom = 10;
+            this.btnEditReservation.Click += new System.EventHandler(this.BtnEditReservation_Click);
+            // 
             // m2lHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEditReservation);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cBoxParticipant);
+            this.Controls.Add(this.txtBoxNbJour);
+            this.Controls.Add(this.cBoxHotel);
             this.Controls.Add(this.btnDeleteHotel);
             this.Controls.Add(this.btnAddHotel);
-            this.Controls.Add(this.txtBoxAddress);
-            this.Controls.Add(this.txtBoxNameHotel);
             this.Controls.Add(this.dgvHotel);
             this.Name = "m2lHotel";
             this.Size = new System.Drawing.Size(677, 420);
@@ -155,16 +190,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHotel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddHotel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteHotel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditReservation)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvHotel;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtBoxNameHotel;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtBoxAddress;
         private Bunifu.Framework.UI.BunifuImageButton btnAddHotel;
         private Bunifu.Framework.UI.BunifuImageButton btnDeleteHotel;
+        private System.Windows.Forms.ComboBox cBoxHotel;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtBoxNbJour;
+        private System.Windows.Forms.ComboBox cBoxParticipant;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuImageButton btnEditReservation;
     }
 }
