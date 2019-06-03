@@ -15,8 +15,7 @@ namespace Main
 {
     public partial class m2lAteliers : UserControl
     {
-        List<Atelier> MesAtelier = DAOAtelier.getAllAteliers();
-        
+        List<Atelier> MesAtelier = DAOAtelier.getallatelier();
 
         public m2lAteliers()
         {
@@ -46,11 +45,9 @@ namespace Main
             card.Controls.Add(addCapaciteValueLabel(i));
             card.Controls.Add(addDateDebut(i));
             card.Controls.Add(addDateFin(i));
-            card.Controls.Add(addButtonModifier(i));
+            card.Controls.Add(addButtonAjouter(i));
             card.Controls.Add(addSeparator(i));
-            card.Controls.Add(addButtonSupprimer(i));
-
-
+           
             return card;
         }
 
@@ -139,103 +136,25 @@ namespace Main
             return date;
         }
 
-        private BunifuFlatButton addButtonModifier(int i)
+        private BunifuFlatButton addButtonAjouter(int i)
         {
             BunifuFlatButton Button = new BunifuFlatButton();
             Button.Name = "buFlatButton_" + i.ToString();
-            Button.ButtonText = "Modifier";
-            Button.Text = "Modifier";
+            Button.ButtonText = "Ajouter";
+            Button.Text = "Ajouter";
             Button.TextAlign =ContentAlignment.MiddleLeft;
             Button.Location = new Point(49, 157);
             Button.Size = new Size(142, 44);
             Button.Activecolor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             Button.BackColor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            Button.Click += new System.EventHandler(bunifuFlatButton1_Click);
-            return Button;
-        }
 
-
-        private BunifuFlatButton addButtonSupprimer(int i)
-        {
-            BunifuFlatButton Button = new BunifuFlatButton();
-            Button.Name = "buFlatButton_supp_" + i.ToString();
-            Button.ButtonText = "Supprmier";
-            Button.Text = "Supprimer";
-            Button.TextAlign = ContentAlignment.MiddleLeft;
-            Button.Location = new Point(209, 157);
-            Button.Size = new Size(142, 44);
-            Button.Activecolor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            Button.BackColor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            Button.Click += new System.EventHandler(bunifuFlatButton2_Click);
             return Button;
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            var btn = sender as BunifuFlatButton;
-            var i = int.Parse(btn.Name.Last().ToString());
-            List<Theme> MesThemes = new List<Theme>();
 
-            string libelle = MesAtelier[i].Libelle.ToString();
-            int capacite = MesAtelier[i].Capacite;
-            DateTime debut = MesAtelier[i].HoraireDebut;
-            DateTime fin = MesAtelier[i].HoraireFin;
-            MesThemes = MesAtelier[i].LesThemes;
-
-            int id = MesAtelier[i].Id;
-
-            ModifierAtelierModal atelierModif = new ModifierAtelierModal(libelle, capacite, debut, fin,id);
-            atelierModif.Dock = DockStyle.Fill;
-            mainForm.Instance.PnlContainer.Controls.Add(atelierModif);
-
-            mainForm.Instance.PnlContainer.Controls["ModifierAtelierModal"].BringToFront();
-        }
-
-        private void bunifubtnAjouter_Click(object sender, EventArgs e)
-        {
-            
-            
-
-                AjouterAtelier atelierAjout = new AjouterAtelier();
-                atelierAjout.Dock = DockStyle.Fill;
-                mainForm.Instance.PnlContainer.Controls.Add(atelierAjout);
-
-                mainForm.Instance.PnlContainer.Controls["AjouterAtelier"].BringToFront();
-            
-        }
-
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            DAOAtelier suppr = new DAOAtelier();
-
-            var btn = sender as BunifuFlatButton;
-            var i = int.Parse(btn.Name.Last().ToString());
-
-            Console.WriteLine(Parent.Name);
-            
-
-
-            int id = MesAtelier[i].Id;
-
-
-
-
-            suppr.supprimerAtelier(id);
-
-            Form a = new Form();
-
-            foreach (Control item in flowLayoutPanel5.Controls)
-            {
-
-                if (item.Name == "i")
-                {
-                    flowLayoutPanel5.Controls.Remove(item);
-                    break; //important step
-                }
-            }
 
         }
     }
 }
-    
-

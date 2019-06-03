@@ -10,7 +10,7 @@ namespace Main.DAO
 
         public void connexion()
         {
-            maConnexion = new SqlConnection("Data Source =(localdb)\\MyInstance; Initial Catalog = M2L_Prod; User Id = root; Password = root; ");
+            maConnexion = new SqlConnection("Data Source =(localdb)\\LocalDB; Initial Catalog = M2L_Test; User Id = root; Password = root; ");
         }
 
         public void connecter()
@@ -25,6 +25,7 @@ namespace Main.DAO
 
         public SqlDataReader execSqlRead(string requete)
         {
+            Console.WriteLine("The connexion " + maConnexion);
 
             SqlCommand maCommand = new SqlCommand();
             maCommand.CommandText = requete;
@@ -39,13 +40,6 @@ namespace Main.DAO
 
             return myDReader;
 
-        }
-
-        public SqlDataAdapter singleRowResult(string request)
-        {
-            SqlDataAdapter sda = new SqlDataAdapter(request, maConnexion);
-
-            return sda;
         }
 
         public void execSqlWrite(string requete)
