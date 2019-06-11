@@ -81,6 +81,12 @@
     <Compile Include="AjouterAtelier.Designer.cs">
       <DependentUpon>AjouterAtelier.cs</DependentUpon>
     </Compile>
+    <Compile Include="atelierUserManaging.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="atelierUserManaging.Designer.cs">
+      <DependentUpon>atelierUserManaging.cs</DependentUpon>
+    </Compile>
     <Compile Include="Authentication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </Compile>
     <EmbeddedResource Include="AjouterAtelier.resx">
       <DependentUpon>AjouterAtelier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="atelierUserManaging.resx">
+      <DependentUpon>atelierUserManaging.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
@@ -243,6 +252,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PinClipart.com_government-power-clipart_1821638.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -58,7 +58,7 @@ namespace Main.DAO
             DB.connecter();
 
             //Using the @ (verbatim literal) to eliminate all the quotes and concatenations
-            String requete = "UPDATE Stand SET id_partenaire = " + partnerId + "where id = " + standId + ";" ;
+            String requete = "UPDATE Stand SET id_partenaire = " + partnerId + " where id = " + standId + ";" ;
 
             DB.execSqlWrite(requete);
 

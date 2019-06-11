@@ -22,7 +22,7 @@ namespace Main.DAO
 
             
 
-            SqlDataAdapter requeteResult = DB.singleRowResult(requete);
+            SqlDataAdapter requeteResult = DB.execSqlDataTableRequest(requete);
 
             DataTable dt = new DataTable();
 

@@ -24,13 +24,12 @@ namespace Main
         {
             m2lAteliers atelierAjout = new m2lAteliers();
             Atelier unAtelier;
-            DAOAtelier ajouter = new DAOAtelier();
 
             int capaciteAjout = Convert.ToInt32(txbCapaciteAjouter.Text);
 
             unAtelier = new Atelier(txbNomAjouter.Text, capaciteAjout, dtpdebutAjouter.Value, dtpFinAjouter.Value);
 
-            ajouter.creerAtelier(unAtelier);
+            DAOAtelier.creerAtelier(unAtelier);
 
             atelierAjout.Refresh();
         }

@@ -139,6 +139,10 @@ namespace Main.LogicLayer
 
         }
 
+        public Atelier()
+        {
+        }
+
 
         #endregion
     }

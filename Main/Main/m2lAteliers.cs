@@ -48,7 +48,6 @@ namespace Main
             card.Controls.Add(addDateFin(i));
             card.Controls.Add(addButtonModifier(i));
             card.Controls.Add(addSeparator(i));
-            card.Controls.Add(addButtonSupprimer(i));
 
 
             return card;
@@ -155,21 +154,6 @@ namespace Main
         }
 
 
-        private BunifuFlatButton addButtonSupprimer(int i)
-        {
-            BunifuFlatButton Button = new BunifuFlatButton();
-            Button.Name = "buFlatButton_supp_" + i.ToString();
-            Button.ButtonText = "Supprmier";
-            Button.Text = "Supprimer";
-            Button.TextAlign = ContentAlignment.MiddleLeft;
-            Button.Location = new Point(209, 157);
-            Button.Size = new Size(142, 44);
-            Button.Activecolor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            Button.BackColor = Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            Button.Click += new System.EventHandler(bunifuFlatButton2_Click);
-            return Button;
-        }
-
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             var btn = sender as BunifuFlatButton;
@@ -184,7 +168,10 @@ namespace Main
 
             int id = MesAtelier[i].Id;
 
-            ModifierAtelierModal atelierModif = new ModifierAtelierModal(libelle, capacite, debut, fin,id);
+            Atelier _obj = MesAtelier[i];
+
+
+            ModifierAtelierModal atelierModif = new ModifierAtelierModal(libelle, capacite, debut, fin, id);
             atelierModif.Dock = DockStyle.Fill;
             mainForm.Instance.PnlContainer.Controls.Add(atelierModif);
 
@@ -206,21 +193,13 @@ namespace Main
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            DAOAtelier suppr = new DAOAtelier();
 
             var btn = sender as BunifuFlatButton;
             var i = int.Parse(btn.Name.Last().ToString());
 
-            Console.WriteLine(Parent.Name);
-            
-
-
             int id = MesAtelier[i].Id;
 
-
-
-
-            suppr.supprimerAtelier(id);
+            DAOAtelier.supprimerAtelier(id);
 
             Form a = new Form();
 

@@ -27,8 +27,10 @@ namespace Main
             {
                 BunifuCards card = generateCard(i);
                 this.flowLayoutPanel1.Controls.Add(card);
-                this.flowLayoutPanel1.Dock = DockStyle.Fill;
+                
             }
+            this.flowLayoutPanel1.Dock = DockStyle.Fill;
+
         }
 
         // generate cards as much as available stands in the database

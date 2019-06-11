@@ -18,6 +18,7 @@ namespace Main
         private DateTime debut;
         private DateTime fin;
         private int atelierId;
+        private Atelier atelier;
 
         private List<Theme> ateliersThemes = new List<Theme>();
 
@@ -33,7 +34,11 @@ namespace Main
             InitializeComponent();
             this.iniValue();
 
+            dataGridViewParticipants.DataSource = DAOAtelier.getAteliersParticipants(id);
+            dtgThemeModif.DataSource = DAOTheme.getAtelierThemes(id);
+
             this.Focus();
+ 
 
 
         }
@@ -44,16 +49,6 @@ namespace Main
             txbModifCapacite.Text = capacite.ToString();
             dtpDebut .Value = debut;
             dtpFin.Value = fin;
-            dtgThemeModif.DataSource = this.ateliersThemes;
-
-
-        }
-
-        public  List<Theme>mesThemes()
-        {
-            
-                return ateliersThemes;
-            
         }
         public void clear()
         {
@@ -61,44 +56,9 @@ namespace Main
             txbNomModif.ResetText();
         }
 
-        private void btnModifValid_Click(object sender, EventArgs e)
-        {
-            m2lAteliers atelierAjout = new m2lAteliers();
-            Atelier unAtelier;
-            DAOAtelier atelier = new DAOAtelier();
-            
-            int capactieModif = Convert.ToInt32(txbModifCapacite.Text);
 
-            unAtelier = new Atelier(atelierId, txbNomModif.Text,capactieModif, dtpDebut.Value, dtpFin.Value);
-
-            atelier.modifierAtelier(unAtelier);
-
-            atelierAjout.Refresh();
-
-        }
-
-        private void btnSupprimer_Click(object sender, EventArgs e)
-        {
-            DAOAtelier suppr = new DAOAtelier();
-            m2lAteliers atelierAjout = new m2lAteliers();
-
-            suppr.supprimerAtelier(atelierId);
-
-           
-
-
-                
-
-            
-
-        
-
-
-
-
-        }
-
-        private void BtnReturnAt_Click(object sender, EventArgs e)
+        //Release used ressources and return to the parent control 
+        private void cleanAndReturn()
         {
             foreach (Control item in mainForm.Instance.PnlContainer.Controls)
             {
@@ -126,6 +86,45 @@ namespace Main
             mainForm.Instance.PnlContainer.Controls.Add(ucAtelier);
 
             mainForm.Instance.PnlContainer.Controls["m2lAteliers"].BringToFront();
+        }
+
+
+        private void BtnReturnAt_Click(object sender, EventArgs e)
+        {
+            cleanAndReturn();
+        }
+
+        private void BtnAddParticipants_Click(object sender, EventArgs e)
+        {
+            AtelierUserManaging actualModal = new AtelierUserManaging(atelierId);
+            actualModal.Dock = DockStyle.Fill;
+            mainForm.Instance.PnlContainer.Controls.Add(actualModal);
+
+            mainForm.Instance.PnlContainer.Controls["AtelierUserManaging"].BringToFront();
+        }
+
+        private void DeleteAtelierBtn_Click(object sender, EventArgs e)
+        {
+            m2lAteliers atelierAjout = new m2lAteliers();
+
+            DAOAtelier.supprimerAtelier(atelierId);
+
+            cleanAndReturn();
+
+        }
+
+        private void ValidateModificationBtn_Click(object sender, EventArgs e)
+        {
+            m2lAteliers atelierAjout = new m2lAteliers();
+            Atelier unAtelier;
+
+            int capactieModif = Convert.ToInt32(txbModifCapacite.Text);
+
+            unAtelier = new Atelier(atelierId, txbNomModif.Text, capactieModif, dtpDebut.Value, dtpFin.Value);
+
+            DAOAtelier.modifierAtelier(unAtelier);
+
+            cleanAndReturn();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Main.DAO
             DB.connexion();
             DB.connecter();
 
-            String requete = "select * from theme where id in (select id_theme from theme_atelier where id_atelier = " + atelierId + ");";
+            String requete = "select id, libelle from theme where id_atelier = " + atelierId + ";";
 
             SqlDataReader requeteResult = DB.execSqlRead(requete);
 
